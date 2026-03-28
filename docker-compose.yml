@@ -1,14 +1,35 @@
 services:
+
   landing-arkhon:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: landing-arkhon
     restart: always
     ports:
-      - "8889:80" # Puedes entrar por http://IP:8889 para probar
+      - "8889:80"
     environment:
       - VIRTUAL_HOST=arkhon.com.ar
       - VIRTUAL_PORT=80
       - LETSENCRYPT_HOST=arkhon.com.ar
+      - LETSENCRYPT_EMAIL=exe20@gmail.com
+    networks:
+      - npm_network
+
+  api-arkhon:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: api-arkhon
+    restart: always
+    env_file:
+      - ./api/.env
+    ports:
+      - "3099:3000"
+    environment:
+      - VIRTUAL_HOST=api.arkhon.com.ar
+      - VIRTUAL_PORT=3000
+      - LETSENCRYPT_HOST=api.arkhon.com.ar
       - LETSENCRYPT_EMAIL=exe20@gmail.com
     networks:
       - npm_network
