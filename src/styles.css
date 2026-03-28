@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #0a0f1c; /* Ultra deep blue/black */
+  --color-accent: #2563eb; 
+  --color-accent-glow: #60a5fa;
+
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+
+  --font-sans: "Inter", sans-serif;
+  --tracking-ultra-tight: -0.05em;
+  --tracking-mega: 0.15em;
+}
+
+@layer base {
+  *, ::before, ::after {
+    transition-property: color, background-color, border-color, shadow, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 400ms;
+  }
+  
+  body {
+    @apply text-neutral-800 antialiased selection:bg-accent selection:text-white dark:text-neutral-200;
+  }
+
+  /* Force smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'wght' 300, 'FILL' 0;
+  }
+}
+
+@layer utilities {
+  .executive-border {
+    border-left: 2px solid var(--color-neutral-200);
+  }
+  
+  .dark .executive-border {
+    border-left: 2px solid var(--color-neutral-800);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent dark:from-white dark:to-accent-glow;
+  }
+
+  .glass-nav {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-lg dark:bg-[#0a0f1c]/70 dark:border-white/5 dark:shadow-2xl;
+  }
+
+  .glass-card {
+    @apply bg-white/50 backdrop-blur-md border border-neutral-200/50 shadow-xl dark:bg-neutral-900/40 dark:border-white/5 dark:shadow-2xl;
+  }
+
+  .grid-bg {
+    background-color: #fafafa;
+    background-image: 
+      linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .dark .grid-bg {
+    background-color: #060913;
+    background-image: 
+      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

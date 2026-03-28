@@ -1,0 +1,16 @@
+# Node
+node_modules/
+dist/
+dist-server/
+
+# Angular
+.angular/
+.vscode/
+bazel-out/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS Files
+.DS_Store
