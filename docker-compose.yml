@@ -1,0 +1,19 @@
+services:
+  landing-arkhon:
+    build: .
+    container_name: landing-arkhon
+    restart: always
+    ports:
+      - "8889:80" # Puedes entrar por http://IP:8889 para probar
+    environment:
+      - VIRTUAL_HOST=arkhon.com.ar
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=arkhon.com.ar
+      - LETSENCRYPT_EMAIL=exe20@gmail.com
+    networks:
+      - npm_network
+
+networks:
+  npm_network:
+    external: true
+    name: npm_network
