@@ -1,270 +1,269 @@
 <div class="grid-bg min-h-screen selection:bg-accent selection:text-white">
 
-    <!-- Floating Elegant Navbar -->
-    <div class="fixed top-4 left-0 right-0 z-50 px-4 md:px-8">
-      <nav class="max-w-screen-2xl mx-auto glass-nav rounded-2xl px-6 h-20 flex items-center justify-between transition-all duration-500">
-        <div class="flex items-center">
-          <span class="text-3xl md:text-4xl font-extrabold tracking-ultra-tight text-primary dark:text-white transition-colors duration-500">
-            ARKHON<span class="font-light text-neutral-400 dark:text-neutral-500">Consultora</span>
-          </span>
+  <!-- Floating Navbar -->
+  <div class="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6 md:px-8">
+    <nav class="max-w-screen-2xl mx-auto glass-nav rounded-2xl px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between transition-all duration-500">
+      <div class="flex items-center min-w-0">
+        <span class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-ultra-tight text-primary dark:text-white transition-colors duration-500 truncate">
+          ARKHON<span class="font-light text-neutral-400 dark:text-neutral-500">Consultora</span>
+        </span>
+      </div>
+
+      <div class="flex items-center gap-3 sm:gap-6 flex-shrink-0">
+        <div class="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
+          <a class="hover:text-accent dark:hover:text-white transition-colors duration-300 relative group" href="#servicios">
+            Servicios
+            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a class="hover:text-accent dark:hover:text-white transition-colors duration-300 relative group" href="#enfoque">
+            Enfoque
+            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a class="text-primary dark:text-white hover:text-accent transition-colors duration-300 relative group" href="#contacto">
+            Contacto
+            <span class="absolute -bottom-2 left-0 w-full h-[2px] bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)]"></span>
+          </a>
         </div>
-        
-        <div class="flex items-center space-x-8">
-          <div class="hidden md:flex items-center space-x-10 text-[11px] font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
-            <a class="hover:text-accent dark:hover:text-white transition-colors duration-300 relative group" href="#servicios">
-              Servicios
-              <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a class="hover:text-accent dark:hover:text-white transition-colors duration-300 relative group" href="#enfoque">
-              Enfoque
-              <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a class="text-primary dark:text-white hover:text-accent transition-colors duration-300 relative group" href="#contacto">
-              Contacto
-              <span class="absolute -bottom-2 left-0 w-full h-[2px] bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)]"></span>
-            </a>
-          </div>
-  
-          <div class="flex items-center border-l border-neutral-200/50 dark:border-neutral-700/50 pl-6 md:pl-8 space-x-2 md:space-x-4 h-10">
-            <button 
-              class="w-10 h-10 rounded-full flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 text-neutral-500 hover:text-primary dark:text-neutral-400 dark:hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer shadow-sm" 
-              (click)="toggleDarkMode()" 
-              aria-label="Alternar tema">
-              <span class="material-symbols-outlined text-xl">contrast</span>
-            </button>
-            <button 
-              class="md:hidden w-10 h-10 rounded-full flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 text-neutral-500 hover:text-primary dark:hover:text-white active:scale-95 transition-all duration-300 cursor-pointer shadow-sm"
-              (click)="toggleMobileMenu()"
-              aria-label="Menú móvil">
-              <span class="material-symbols-outlined text-2xl">menu</span>
-            </button>
-          </div>
-        </div>
-      </nav>
-  
-      <!-- Mobile Menu Dropdown -->
-      @if (isMobileMenuOpen) {
-        <div class="md:hidden absolute top-24 left-4 right-4 glass-nav rounded-2xl p-6 flex flex-col space-y-6 animate-fade-in-up" style="animation-duration: 0.3s; animation-delay: 0ms;">
-          <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 hover:text-accent dark:hover:text-white" href="#servicios" (click)="toggleMobileMenu()">Servicios</a>
-          <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 hover:text-accent dark:hover:text-white" href="#enfoque" (click)="toggleMobileMenu()">Enfoque</a>
-          <a class="text-sm font-bold uppercase tracking-widest text-primary dark:text-white hover:text-accent" href="#contacto" (click)="toggleMobileMenu()">Contacto</a>
-        </div>
-      }
-    </div>
-    
-    <!-- Hero / Header -->
-    <header class="relative pt-40 md:pt-56 pb-32 md:pb-52 overflow-hidden flex items-center min-h-[90vh]">
-      <!-- Animated Glowing Orbs -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-[70%] -translate-y-1/2 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-accent/20 dark:bg-accent/10 rounded-full blur-[100px] md:blur-[140px] -z-10 pointer-events-none mix-blend-multiply dark:mix-blend-screen transition-all duration-1000"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-[30%] -translate-y-[20%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-500/10 dark:bg-indigo-500/10 rounded-full blur-[80px] md:blur-[120px] -z-10 pointer-events-none mix-blend-multiply dark:mix-blend-screen transition-all duration-1000"></div>
-  
-      <div class="max-w-screen-2xl mx-auto px-8 w-full z-10">
-        <div class="max-w-5xl opacity-0 animate-fade-in-up">
-          <div class="inline-flex items-center space-x-4 mb-10 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-neutral-200/50 dark:border-white/10 px-5 py-2.5 rounded-full shadow-sm">
-            <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-            <span class="text-xs font-bold tracking-[0.2em] uppercase text-primary dark:text-white">Briefing Estratégico</span>
-          </div>
-          <h1 class="text-6xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] font-extrabold tracking-ultra-tight leading-[0.95] mb-12 text-gradient">
-            Hacer bien <br class="hidden md:block"/>lo que importa.
-          </h1>
-          <p class="text-2xl md:text-3xl text-neutral-600 dark:text-neutral-400 font-light leading-snug max-w-3xl opacity-0 animate-fade-in-up delay-200">
-            Gestión administrativa y financiera de alto nivel para organizaciones que exigen precisión, criterio y sostenibilidad.
-          </p>
+
+        <div class="flex items-center border-l border-neutral-200/50 dark:border-neutral-700/50 pl-3 sm:pl-6 space-x-2">
+          <button
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 text-neutral-500 hover:text-primary dark:text-neutral-400 dark:hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer shadow-sm"
+            (click)="toggleDarkMode()"
+            aria-label="Alternar tema">
+            <span class="material-symbols-outlined text-lg sm:text-xl">contrast</span>
+          </button>
+          <button
+            class="md:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 text-neutral-500 hover:text-primary dark:hover:text-white active:scale-95 transition-all duration-300 cursor-pointer shadow-sm"
+            (click)="toggleMobileMenu()"
+            aria-label="Menú móvil">
+            <span class="material-symbols-outlined text-xl sm:text-2xl">{{ isMobileMenuOpen ? 'close' : 'menu' }}</span>
+          </button>
         </div>
       </div>
-    </header>
-  
-    <main>
-      <!-- Misión -->
-      <section class="py-32 md:py-48 relative" id="que-hacemos">
-        <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
-          <div class="grid lg:grid-cols-12 gap-16 lg:gap-24 opacity-0 animate-fade-in-up delay-200">
-            <div class="lg:col-span-4">
-              <div class="sticky top-40">
-                <h2 class="text-xs font-bold uppercase tracking-mega text-accent mb-6 flex items-center space-x-3">
-                  <span class="w-8 h-[1px] bg-accent"></span>
-                  <span>La Misión</span>
-                </h2>
-                <h3 class="text-4xl md:text-5xl font-extrabold text-primary dark:text-white leading-tight">Ordenamos la toma de decisiones.</h3>
-              </div>
-            </div>
-            <div class="lg:col-span-8 grid md:grid-cols-2 gap-12 lg:gap-16 pt-2">
-              <div class="executive-border pl-8 md:pl-10 relative group">
-                <div class="absolute -left-[2px] top-0 w-[2px] h-0 bg-accent group-hover:h-full transition-all duration-700 ease-out"></div>
-                <p class="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 font-light leading-relaxed mb-6">
-                  En <span class="text-primary dark:text-white font-medium">ARKHON</span> acompañamos a la dirección en la arquitectura de su gestión económica. Trabajamos sobre los fundamentos que gobiernan la organización.
-                </p>
-              </div>
-              <div class="executive-border pl-8 md:pl-10 relative group">
-                <div class="absolute -left-[2px] top-0 w-[2px] h-0 bg-accent group-hover:h-full transition-all duration-700 ease-out"></div>
-                <p class="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 font-light leading-relaxed">
-                  No operamos con fórmulas genéricas. Nuestro enfoque es riguroso, analítico y centrado en la problemática de fondo para aportar previsibilidad real.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-  
-      <!-- Servicios (Cards) -->
-      <section class="py-32 md:py-48 relative overflow-hidden" id="servicios">
-        <div class="absolute inset-0 bg-neutral-100/50 dark:bg-neutral-900/50 border-y border-neutral-200/50 dark:border-neutral-800/50 -z-10"></div>
-        <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
-          <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-24 opacity-0 animate-fade-in-up delay-100">
-            <div>
-              <h2 class="text-xs font-bold uppercase tracking-mega text-accent mb-6 flex items-center space-x-3">
-                <span class="w-8 h-[1px] bg-accent"></span>
-                <span>Capabilities / 04</span>
-              </h2>
-              <h3 class="text-5xl md:text-7xl font-extrabold tracking-tight text-primary dark:text-white">Servicios</h3>
-            </div>
-          </div>
-          
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <!-- Card 1 -->
-            <div class="glass-card p-10 md:p-12 rounded-[2rem] hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-100 relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-              <div class="w-16 h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
-                <span class="material-symbols-outlined text-4xl text-accent">query_stats</span>
-              </div>
-              <h3 class="text-2xl font-bold mb-5 dark:text-white relative z-10">Diagnóstico <br/>de gestión</h3>
-              <p class="text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Análisis profundo de la estructura organizacional para identificar riesgos y áreas críticas de mejora.</p>
-            </div>
-            
-            <!-- Card 2 -->
-            <div class="glass-card p-10 md:p-12 rounded-[2rem] hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-200 relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-              <div class="w-16 h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
-                <span class="material-symbols-outlined text-4xl text-accent">account_balance_wallet</span>
-              </div>
-              <h3 class="text-2xl font-bold mb-5 dark:text-white relative z-10">Acompañamiento <br/>ejecutivo</h3>
-              <p class="text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Soporte continuo a directivos en la revisión periódica de las decisiones y optimización de procesos.</p>
-            </div>
-  
-            <!-- Card 3 -->
-            <div class="glass-card p-10 md:p-12 rounded-[2rem] hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-300 relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-              <div class="w-16 h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
-                <span class="material-symbols-outlined text-4xl text-accent">architecture</span>
-              </div>
-              <h3 class="text-2xl font-bold mb-5 dark:text-white relative z-10">Planificación <br/>estratégica</h3>
-              <p class="text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Diseño de funciones administrativas y definición de procesos de control para sostener resultados.</p>
-            </div>
-  
-            <!-- Card 4 -->
-            <div class="glass-card p-10 md:p-12 rounded-[2rem] hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-400 relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-              <div class="w-16 h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
-                <span class="material-symbols-outlined text-4xl text-accent">monitoring</span>
-              </div>
-              <h3 class="text-2xl font-bold mb-5 dark:text-white relative z-10">Control <br/>Financiero</h3>
-              <p class="text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Armado de presupuestos y estados financieros proyectados para máxima previsibilidad.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-  
-      <!-- Enfoque -->
-      <section class="py-32 md:py-48 relative" id="enfoque">
-        <div class="max-w-screen-2xl mx-auto px-8">
-          <div class="grid lg:grid-cols-2 gap-20 lg:gap-32 items-center">
-            
-            <div class="opacity-0 animate-fade-in-up delay-100">
-              <h2 class="text-xs font-bold uppercase tracking-mega text-accent mb-6 flex items-center space-x-3">
-                <span class="w-8 h-[1px] bg-accent"></span>
-                <span>Visión</span>
-              </h2>
-              <h3 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-16 dark:text-white leading-tight">Nuestro enfoque</h3>
-              
-              <div class="space-y-12">
-                <div class="flex gap-8 group">
-                  <span class="text-accent font-bold text-lg md:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity">01.</span>
-                  <div>
-                    <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Foco en lo esencial</h4>
-                    <p class="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">Priorizamos las decisiones que realmente gobiernan la gestión diaria, eliminando ruido corporativo.</p>
-                  </div>
-                </div>
-                <div class="flex gap-8 group">
-                  <span class="text-accent font-bold text-lg md:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity">02.</span>
-                  <div>
-                    <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Rigor de datos</h4>
-                    <p class="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">Ordenamos la información para que el instinto directivo se respalde con números inquebrantables.</p>
-                  </div>
-                </div>
-                <div class="flex gap-8 group">
-                  <span class="text-accent font-bold text-lg md:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity">03.</span>
-                  <div>
-                    <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Criterio profesional</h4>
-                    <p class="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">Aportamos experiencia aplicada real en el campo, no solo teoría de manual de consultoría.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Right floating element -->
-            <div class="relative opacity-0 animate-fade-in-up delay-300">
-              <div class="absolute -inset-1 bg-gradient-to-tr from-accent to-indigo-600 rounded-[2.5rem] blur-xl opacity-30 dark:opacity-20"></div>
-              <div class="relative bg-primary dark:bg-neutral-900/80 backdrop-blur-3xl p-12 md:p-16 rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 blur-[80px] rounded-full pointer-events-none"></div>
-                
-                <h3 class="text-3xl font-bold text-white mb-10 relative z-10">Cuándo somos la opción correcta</h3>
-                <ul class="space-y-8 relative z-10">
-                  <li class="flex items-start space-x-5 group">
-                    <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)]"></span>
-                    <span class="text-lg text-neutral-300 group-hover:text-white transition-colors">Crecimiento con sensación de desorden administrativo.</span>
-                  </li>
-                  <li class="flex items-start space-x-5 group">
-                    <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)]"></span>
-                    <span class="text-lg text-neutral-300 group-hover:text-white transition-colors">Necesidad de mayor claridad estratégica para decidir.</span>
-                  </li>
-                  <li class="flex items-start space-x-5 group">
-                    <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)]"></span>
-                    <span class="text-lg text-neutral-300 group-hover:text-white transition-colors">Búsqueda de profesionalización sin ahogarse en burocracia.</span>
-                  </li>
-                  <li class="flex items-start space-x-5 group">
-                    <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)]"></span>
-                    <span class="text-lg text-neutral-300 group-hover:text-white transition-colors">Organizaciones exigentes que valoran el trabajo bien hecho.</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-  
-          </div>
-        </div>
-      </section>
-  
-      <!-- CTA / Contacto -->
-      <section class="py-40 relative overflow-hidden" id="contacto">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-200/40 dark:to-accent/5 pointer-events-none"></div>
-        <div class="max-w-5xl mx-auto px-8 text-center relative z-10 opacity-0 animate-fade-in-up delay-100">
-          <h2 class="text-5xl md:text-7xl font-extrabold text-primary dark:text-white tracking-tight mb-16 leading-tight">
-            Si su organización requiere orden y claridad, <span class="text-neutral-400 dark:text-neutral-500">conversemos sobre estrategia.</span>
-          </h2>
-          <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-            <a class="relative inline-flex items-center justify-center px-12 py-5 font-bold uppercase tracking-widest text-sm text-white bg-primary dark:bg-white dark:text-primary rounded-full overflow-hidden group hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] transition-all duration-500 hover:-translate-y-1" href="#">
-              <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-accent to-blue-400 group-hover:opacity-100 opacity-0 transition-opacity duration-500 dark:from-accent dark:to-indigo-500"></span>
-              <span class="relative z-10 group-hover:text-white transition-colors duration-500">Iniciar consulta</span>
-            </a>
-            <span class="text-neutral-500 dark:text-neutral-400 text-base font-medium tracking-wide">— o escríbanos directamente</span>
-          </div>
-        </div>
-      </section>
-    </main>
-  
-    <footer class="py-16 border-t border-neutral-200/50 dark:border-neutral-800/50 relative z-10 bg-white/50 dark:bg-neutral-900/20 backdrop-blur-md">
-      <div class="max-w-screen-2xl mx-auto px-8">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
-          <div>
-            <span class="text-2xl font-extrabold tracking-tighter text-primary dark:text-white">ARKHON<span class="font-light text-neutral-400">Consultora</span></span>
-            <p class="text-[11px] uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mt-3 font-medium">Executive Advisory &amp; Management</p>
-          </div>
-          <div class="flex space-x-12 text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
-            <a class="hover:text-accent dark:hover:text-white transition-colors hover:-translate-y-1 transform duration-300" href="#">LinkedIn</a>
-            <a class="hover:text-accent dark:hover:text-white transition-colors hover:-translate-y-1 transform duration-300" href="#">Email</a>
-            <span class="text-neutral-400 dark:text-neutral-600">© 2026</span>
-          </div>
-        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    @if (isMobileMenuOpen) {
+      <div class="md:hidden mt-2 glass-nav rounded-2xl p-5 flex flex-col space-y-5 animate-fade-in-up" style="animation-duration:0.25s">
+        <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 hover:text-accent dark:hover:text-white py-1" href="#servicios" (click)="toggleMobileMenu()">Servicios</a>
+        <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 hover:text-accent dark:hover:text-white py-1" href="#enfoque" (click)="toggleMobileMenu()">Enfoque</a>
+        <a class="text-sm font-bold uppercase tracking-widest text-primary dark:text-white hover:text-accent py-1" href="#contacto" (click)="toggleMobileMenu()">Contacto</a>
       </div>
-    </footer>
-  
+    }
   </div>
+
+  <!-- Hero -->
+  <header class="relative pt-28 sm:pt-36 md:pt-48 pb-20 sm:pb-28 md:pb-40 overflow-hidden flex items-center">
+    <!-- Glowing Orbs -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-[60%] -translate-y-1/2 w-[280px] sm:w-[500px] md:w-[700px] h-[280px] sm:h-[500px] md:h-[700px] bg-accent/20 dark:bg-accent/10 rounded-full blur-[80px] sm:blur-[120px] md:blur-[140px] -z-10 pointer-events-none mix-blend-multiply dark:mix-blend-screen transition-all duration-1000"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-[30%] -translate-y-[20%] w-[200px] sm:w-[400px] md:w-[600px] h-[200px] sm:h-[400px] md:h-[600px] bg-indigo-500/10 rounded-full blur-[60px] sm:blur-[100px] md:blur-[120px] -z-10 pointer-events-none mix-blend-multiply dark:mix-blend-screen transition-all duration-1000"></div>
+
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 w-full z-10">
+      <div class="max-w-5xl opacity-0 animate-fade-in-up">
+        <div class="inline-flex items-center space-x-3 mb-6 sm:mb-10 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-neutral-200/50 dark:border-white/10 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse flex-shrink-0"></span>
+          <span class="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-primary dark:text-white">Briefing Estratégico</span>
+        </div>
+        <h1 class="text-[2.8rem] sm:text-6xl md:text-[6rem] lg:text-[7.5rem] font-extrabold tracking-ultra-tight leading-[0.95] mb-6 sm:mb-10 md:mb-12 text-gradient">
+          Hacer bien <br class="hidden sm:block"/>lo que importa.
+        </h1>
+        <p class="text-lg sm:text-2xl md:text-3xl text-neutral-600 dark:text-neutral-400 font-light leading-snug max-w-3xl opacity-0 animate-fade-in-up delay-200">
+          Gestión administrativa y financiera de alto nivel para organizaciones que exigen precisión, criterio y sostenibilidad.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Misión -->
+    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative" id="que-hacemos">
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-24 opacity-0 animate-fade-in-up delay-200">
+          <div class="lg:col-span-4">
+            <div class="lg:sticky lg:top-40">
+              <h2 class="text-xs font-bold uppercase tracking-mega text-accent mb-4 sm:mb-6 flex items-center space-x-3">
+                <span class="w-8 h-[1px] bg-accent"></span>
+                <span>La Misión</span>
+              </h2>
+              <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary dark:text-white leading-tight">Ordenamos la toma de decisiones.</h3>
+            </div>
+          </div>
+          <div class="lg:col-span-8 grid sm:grid-cols-2 gap-8 lg:gap-16 pt-2">
+            <div class="executive-border pl-6 sm:pl-8 md:pl-10 relative group">
+              <div class="absolute -left-[2px] top-0 w-[2px] h-0 bg-accent group-hover:h-full transition-all duration-700 ease-out"></div>
+              <p class="text-base sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 font-light leading-relaxed">
+                En <span class="text-primary dark:text-white font-medium">ARKHON</span> acompañamos a la dirección en la arquitectura de su gestión económica. Trabajamos sobre los fundamentos que gobiernan la organización.
+              </p>
+            </div>
+            <div class="executive-border pl-6 sm:pl-8 md:pl-10 relative group">
+              <div class="absolute -left-[2px] top-0 w-[2px] h-0 bg-accent group-hover:h-full transition-all duration-700 ease-out"></div>
+              <p class="text-base sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 font-light leading-relaxed">
+                No operamos con fórmulas genéricas. Nuestro enfoque es riguroso, analítico y centrado en la problemática de fondo para aportar previsibilidad real.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative overflow-hidden" id="servicios">
+      <div class="absolute inset-0 bg-neutral-100/50 dark:bg-neutral-900/50 border-y border-neutral-200/50 dark:border-neutral-800/50 -z-10"></div>
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-12 sm:mb-16 md:mb-24 opacity-0 animate-fade-in-up delay-100 gap-4">
+          <div>
+            <h2 class="text-xs font-bold uppercase tracking-mega text-accent mb-4 sm:mb-6 flex items-center space-x-3">
+              <span class="w-8 h-[1px] bg-accent"></span>
+              <span>Capabilities / 04</span>
+            </h2>
+            <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-primary dark:text-white">Servicios</h3>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <!-- Card 1 -->
+          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-100 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">query_stats</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Diagnóstico de gestión</h3>
+            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Análisis profundo de la estructura organizacional para identificar riesgos y áreas críticas de mejora.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-200 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">account_balance_wallet</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Acompañamiento ejecutivo</h3>
+            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Soporte continuo a directivos en la revisión periódica de las decisiones y optimización de procesos.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-300 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">architecture</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Planificación estratégica</h3>
+            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Diseño de funciones administrativas y definición de procesos de control para sostener resultados.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-400 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">monitoring</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Control Financiero</h3>
+            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Armado de presupuestos y estados financieros proyectados para máxima previsibilidad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enfoque -->
+    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative" id="enfoque">
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+        <div class="grid lg:grid-cols-2 gap-14 lg:gap-32 items-center">
+
+          <div class="opacity-0 animate-fade-in-up delay-100">
+            <h2 class="text-xs font-bold uppercase tracking-mega text-accent mb-4 sm:mb-6 flex items-center space-x-3">
+              <span class="w-8 h-[1px] bg-accent"></span>
+              <span>Visión</span>
+            </h2>
+            <h3 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight mb-10 sm:mb-16 dark:text-white leading-tight">Nuestro enfoque</h3>
+
+            <div class="space-y-8 sm:space-y-12">
+              <div class="flex gap-5 sm:gap-8 group">
+                <span class="text-accent font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">01.</span>
+                <div>
+                  <h4 class="text-lg sm:text-xl font-bold text-primary dark:text-white mb-2">Foco en lo esencial</h4>
+                  <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">Priorizamos las decisiones que realmente gobiernan la gestión diaria, eliminando ruido corporativo.</p>
+                </div>
+              </div>
+              <div class="flex gap-5 sm:gap-8 group">
+                <span class="text-accent font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">02.</span>
+                <div>
+                  <h4 class="text-lg sm:text-xl font-bold text-primary dark:text-white mb-2">Rigor de datos</h4>
+                  <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">Ordenamos la información para que el instinto directivo se respalde con números inquebrantables.</p>
+                </div>
+              </div>
+              <div class="flex gap-5 sm:gap-8 group">
+                <span class="text-accent font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">03.</span>
+                <div>
+                  <h4 class="text-lg sm:text-xl font-bold text-primary dark:text-white mb-2">Criterio profesional</h4>
+                  <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">Aportamos experiencia aplicada real en el campo, no solo teoría de manual de consultoría.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Oscura -->
+          <div class="relative opacity-0 animate-fade-in-up delay-300">
+            <div class="absolute -inset-1 bg-gradient-to-tr from-accent to-indigo-600 rounded-[2rem] sm:rounded-[2.5rem] blur-xl opacity-30 dark:opacity-20"></div>
+            <div class="relative bg-primary dark:bg-neutral-900/80 backdrop-blur-3xl p-8 sm:p-12 md:p-16 rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden">
+              <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 blur-[80px] rounded-full pointer-events-none"></div>
+              <h3 class="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-10 relative z-10">Cuándo somos la opción correcta</h3>
+              <ul class="space-y-5 sm:space-y-8 relative z-10">
+                <li class="flex items-start space-x-4 sm:space-x-5 group">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)] flex-shrink-0"></span>
+                  <span class="text-base sm:text-lg text-neutral-300 group-hover:text-white transition-colors">Crecimiento con sensación de desorden administrativo.</span>
+                </li>
+                <li class="flex items-start space-x-4 sm:space-x-5 group">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)] flex-shrink-0"></span>
+                  <span class="text-base sm:text-lg text-neutral-300 group-hover:text-white transition-colors">Necesidad de mayor claridad estratégica para decidir.</span>
+                </li>
+                <li class="flex items-start space-x-4 sm:space-x-5 group">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)] flex-shrink-0"></span>
+                  <span class="text-base sm:text-lg text-neutral-300 group-hover:text-white transition-colors">Búsqueda de profesionalización sin ahogarse en burocracia.</span>
+                </li>
+                <li class="flex items-start space-x-4 sm:space-x-5 group">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)] flex-shrink-0"></span>
+                  <span class="text-base sm:text-lg text-neutral-300 group-hover:text-white transition-colors">Organizaciones exigentes que valoran el trabajo bien hecho.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / Contacto -->
+    <section class="py-24 sm:py-32 md:py-40 relative overflow-hidden" id="contacto">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-200/40 dark:to-accent/5 pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-8 text-center relative z-10 opacity-0 animate-fade-in-up delay-100">
+        <h2 class="text-3xl sm:text-5xl md:text-7xl font-extrabold text-primary dark:text-white tracking-tight mb-10 sm:mb-16 leading-tight">
+          Si su organización requiere orden y claridad, <span class="text-neutral-400 dark:text-neutral-500">conversemos sobre estrategia.</span>
+        </h2>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8">
+          <a class="w-full sm:w-auto relative inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-5 font-bold uppercase tracking-widest text-xs sm:text-sm text-white bg-primary dark:bg-white dark:text-primary rounded-full overflow-hidden group hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] transition-all duration-500 hover:-translate-y-1" href="#">
+            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-accent to-blue-400 group-hover:opacity-100 opacity-0 transition-opacity duration-500 dark:from-accent dark:to-indigo-500"></span>
+            <span class="relative z-10 group-hover:text-white transition-colors duration-500">Iniciar consulta</span>
+          </a>
+          <span class="text-neutral-500 dark:text-neutral-400 text-sm sm:text-base font-medium tracking-wide">— o escríbanos directamente</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-10 sm:py-16 border-t border-neutral-200/50 dark:border-neutral-800/50 relative z-10 bg-white/50 dark:bg-neutral-900/20 backdrop-blur-md">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
+        <div>
+          <span class="text-xl sm:text-2xl font-extrabold tracking-tighter text-primary dark:text-white">ARKHON<span class="font-light text-neutral-400">Consultora</span></span>
+          <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mt-2 sm:mt-3 font-medium">Executive Advisory &amp; Management</p>
+        </div>
+        <div class="flex space-x-8 sm:space-x-12 text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
+          <a class="hover:text-accent dark:hover:text-white transition-colors hover:-translate-y-1 transform duration-300" href="#">LinkedIn</a>
+          <a class="hover:text-accent dark:hover:text-white transition-colors hover:-translate-y-1 transform duration-300" href="#">Email</a>
+          <span class="text-neutral-400 dark:text-neutral-600">© 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
