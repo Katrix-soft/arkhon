@@ -1,39 +1,43 @@
-<div class="grid-bg min-h-screen selection:bg-accent selection:text-white">
+<div class="min-h-screen selection:bg-accent selection:text-white bg-surface-light dark:bg-surface-dark">
 
   <!-- Floating Navbar -->
   <div class="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6 md:px-8">
     <nav class="max-w-screen-2xl mx-auto glass-nav rounded-2xl px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between transition-all duration-500">
       <div class="flex items-center min-w-0">
-        <span class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-ultra-tight text-primary dark:text-white transition-colors duration-500 truncate">
-          ARKHON<span class="font-light text-neutral-400 dark:text-neutral-500">Consultora</span>
+        <span class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-ultra-tight text-text-primary-light dark:text-text-primary-dark transition-colors duration-500 truncate">
+          ARKHON<span class="font-light text-text-secondary-light dark:text-text-secondary-dark">Consultora</span>
         </span>
       </div>
 
       <div class="flex items-center gap-3 sm:gap-6 flex-shrink-0">
-        <div class="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
+        <div class="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] font-bold uppercase tracking-widest text-text-secondary-light dark:text-text-secondary-dark">
           <a class="hover:text-accent dark:hover:text-white transition-colors duration-300 relative group" href="#servicios">
             Servicios
+            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a class="hover:text-accent dark:hover:text-white transition-colors duration-300 relative group" href="#equipo">
+            Equipo
             <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
           </a>
           <a class="hover:text-accent dark:hover:text-white transition-colors duration-300 relative group" href="#enfoque">
             Enfoque
             <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a class="text-primary dark:text-white hover:text-accent transition-colors duration-300 relative group" href="#contacto">
+          <a class="text-text-primary-light dark:text-text-primary-dark hover:text-primary-brand transition-colors duration-300 relative group" href="#contacto">
             Contacto
-            <span class="absolute -bottom-2 left-0 w-full h-[2px] bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)]"></span>
+            <span class="absolute -bottom-2 left-0 w-full h-[2px] bg-primary-brand shadow-[0_0_10px_rgba(15,76,129,0.2)]"></span>
           </a>
         </div>
 
-        <div class="flex items-center border-l border-neutral-200/50 dark:border-neutral-700/50 pl-3 sm:pl-6 space-x-2">
+        <div class="flex items-center border-l border-slate-800/50 dark:border-neutral-700/50 pl-3 sm:pl-6 space-x-2">
           <button
-            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 text-neutral-500 hover:text-primary dark:text-neutral-400 dark:hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer shadow-sm"
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-card-light dark:bg-card-dark text-text-secondary-light dark:text-text-secondary-dark hover:text-primary-brand dark:hover:text-gold hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer shadow-sm border border-border-light dark:border-white/5"
             (click)="toggleDarkMode()"
-            aria-label="Alternar tema">
+            aria-label="Cambiar tema">
             <span class="material-symbols-outlined text-lg sm:text-xl">contrast</span>
           </button>
           <button
-            class="md:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 text-neutral-500 hover:text-primary dark:hover:text-white active:scale-95 transition-all duration-300 cursor-pointer shadow-sm"
+            class="md:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-card-light dark:bg-card-dark text-text-secondary-light dark:text-text-secondary-dark hover:text-primary-brand dark:hover:text-gold active:scale-95 transition-all duration-300 cursor-pointer shadow-sm border border-border-light dark:border-white/5"
             (click)="toggleMobileMenu()"
             aria-label="Menú móvil">
             <span class="material-symbols-outlined text-xl sm:text-2xl">{{ isMobileMenuOpen ? 'close' : 'menu' }}</span>
@@ -46,8 +50,9 @@
     @if (isMobileMenuOpen) {
       <div class="md:hidden mt-2 glass-nav rounded-2xl p-5 flex flex-col space-y-5 animate-fade-in-up" style="animation-duration:0.25s">
         <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 hover:text-accent dark:hover:text-white py-1" href="#servicios" (click)="toggleMobileMenu()">Servicios</a>
+        <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 hover:text-accent dark:hover:text-white py-1" href="#equipo" (click)="toggleMobileMenu()">Equipo</a>
         <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 hover:text-accent dark:hover:text-white py-1" href="#enfoque" (click)="toggleMobileMenu()">Enfoque</a>
-        <a class="text-sm font-bold uppercase tracking-widest text-primary dark:text-white hover:text-accent py-1" href="#contacto" (click)="toggleMobileMenu()">Contacto</a>
+        <a class="text-sm font-bold uppercase tracking-widest text-white dark:text-white hover:text-accent py-1" href="#contacto" (click)="toggleMobileMenu()">Contacto</a>
       </div>
     }
   </div>
@@ -60,15 +65,13 @@
 
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 w-full z-10">
       <div class="max-w-5xl opacity-0 animate-fade-in-up">
-        <div class="inline-flex items-center space-x-3 mb-6 sm:mb-10 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-neutral-200/50 dark:border-white/10 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse flex-shrink-0"></span>
-          <span class="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-primary dark:text-white">Briefing Estratégico</span>
-        </div>
+        <!-- Pill removed as requested -->
+
         <h1 class="text-[2.8rem] sm:text-6xl md:text-[6rem] lg:text-[7.5rem] font-extrabold tracking-ultra-tight leading-[0.95] mb-6 sm:mb-10 md:mb-12 text-gradient">
           Hacer bien <br class="hidden sm:block"/>lo que importa.
         </h1>
-        <p class="text-lg sm:text-2xl md:text-3xl text-neutral-600 dark:text-neutral-400 font-light leading-snug max-w-3xl opacity-0 animate-fade-in-up delay-200">
-          Gestión administrativa y financiera de alto nivel para organizaciones que exigen precisión, criterio y sostenibilidad.
+        <p class="text-lg sm:text-2xl md:text-3xl text-text-secondary-light dark:text-text-secondary-dark font-light leading-snug max-w-3xl opacity-0 animate-fade-in-up delay-200">
+          Gestión Administrativa, Económica y Financiera de alto nivel para organizaciones que exigen precisión, criterio y sostenibilidad.
         </p>
       </div>
     </div>
@@ -81,24 +84,24 @@
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-24 opacity-0 animate-fade-in-up delay-200">
           <div class="lg:col-span-4">
             <div class="lg:sticky lg:top-40">
-              <h2 class="text-xs font-bold uppercase tracking-mega text-accent mb-4 sm:mb-6 flex items-center space-x-3">
-                <span class="w-8 h-[1px] bg-accent"></span>
+              <h2 class="text-xs font-bold uppercase tracking-mega text-gold mb-4 sm:mb-6 flex items-center space-x-3">
+                <span class="w-8 h-[1px] bg-gold"></span>
                 <span>La Misión</span>
               </h2>
-              <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary dark:text-white leading-tight">Ordenamos la toma de decisiones.</h3>
+              <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white leading-tight">Ordenamos la toma de decisiones.</h3>
             </div>
           </div>
           <div class="lg:col-span-8 grid sm:grid-cols-2 gap-8 lg:gap-16 pt-2">
             <div class="executive-border pl-6 sm:pl-8 md:pl-10 relative group">
               <div class="absolute -left-[2px] top-0 w-[2px] h-0 bg-accent group-hover:h-full transition-all duration-700 ease-out"></div>
               <p class="text-base sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 font-light leading-relaxed">
-                En <span class="text-primary dark:text-white font-medium">ARKHON</span> acompañamos a la dirección en la arquitectura de su gestión económica. Trabajamos sobre los fundamentos que gobiernan la organización.
+                En <span class="text-neutral-900 dark:text-white font-medium">ARKHON</span> acompañamos a la dirección y sus equipos de trabajo en la arquitectura de su gestión económica. Trabajamos sobre los fundamentos que gobiernan la organización.
               </p>
             </div>
             <div class="executive-border pl-6 sm:pl-8 md:pl-10 relative group">
               <div class="absolute -left-[2px] top-0 w-[2px] h-0 bg-accent group-hover:h-full transition-all duration-700 ease-out"></div>
-              <p class="text-base sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 font-light leading-relaxed">
-                No operamos con fórmulas genéricas. Nuestro enfoque es riguroso, analítico y centrado en la problemática de fondo para aportar previsibilidad real.
+              <p class="text-base sm:text-xl md:text-2xl text-neutral-400 dark:text-neutral-400 font-light leading-relaxed">
+                Nuestro enfoque es riguroso, analítico y centrado en la problemática de fondo para aportar previsibilidad.
               </p>
             </div>
           </div>
@@ -106,17 +109,132 @@
       </div>
     </section>
 
+    <!-- Equipo -->
+    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative overflow-hidden" id="equipo">
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
+        <div class="flex flex-col mb-12 sm:mb-16 md:mb-24 opacity-0 animate-fade-in-up">
+          <h2 class="text-xs font-bold uppercase tracking-mega text-gold mb-4 sm:mb-6 flex items-center space-x-3">
+            <span class="w-8 h-[1px] bg-gold"></span>
+            <span>Equipo / 03</span>
+          </h2>
+          <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-neutral-900 dark:text-white">Nuestro Equipo</h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14 max-w-6xl mx-auto">
+          <!-- Perfil: Pablo -->
+          <div class="group opacity-0 animate-fade-in-up delay-100">
+            <div class="glass-card rounded-[2.5rem] p-6 sm:p-7 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] border-transparent hover:border-accent/30 relative overflow-hidden">
+              <div class="absolute -top-10 -right-10 w-32 h-32 bg-indigo-500/5 rounded-full blur-3xl group-hover:bg-indigo-500/10 transition-all duration-700"></div>
+              
+              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40 dark:bg-neutral-800">
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary/80 to-indigo-600/30 opacity-40"></div>
+                <div class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-1000">
+                   <span class="material-symbols-outlined text-6xl text-indigo-400/40">person_4</span>
+                </div>
+                <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center backdrop-blur-md translate-y-4 group-hover:translate-y-0">
+                   <p class="text-white/90 text-[13px] leading-relaxed mb-5 font-light italic">"Acompañamos la toma de decisiones con análisis riguroso y visión de futuro."</p>
+                   <div class="flex gap-3">
+                     <a href="https://www.linkedin.com/in/pablomoya35/" target="_blank" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                     </a>
+                     <a href="#" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
+                        <span class="material-symbols-outlined text-lg">mail</span>
+                     </a>
+                   </div>
+                </div>
+              </div>
+              
+              <div class="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
+                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand dark:text-gold mb-1 block">Socio Fundador</span>
+                <h4 class="text-2xl font-extrabold text-text-primary-light dark:text-text-primary-dark mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Pablo</h4>
+                <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark font-medium">Asesor Estratégico</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Perfil: Victoria -->
+          <div class="group opacity-0 animate-fade-in-up delay-200">
+            <div class="glass-card rounded-[2.5rem] p-6 sm:p-7 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-20px_rgba(13, 148, 136, 0.25)] border-transparent hover:border-accent/30 relative overflow-hidden">
+              <div class="absolute -top-10 -right-10 w-32 h-32 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-all duration-700"></div>
+              
+              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40 dark:bg-neutral-800">
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary to-accent/30 opacity-40"></div>
+                <div class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-1000">
+                   <span class="material-symbols-outlined text-6xl text-accent/40">person_3</span>
+                </div>
+                <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center backdrop-blur-md translate-y-4 group-hover:translate-y-0">
+                   <p class="text-white/90 text-[13px] leading-relaxed mb-5 font-light italic">"Optimizamos la estructura para que la dirección pueda enfocarse en el crecimiento."</p>
+                   <div class="flex gap-3">
+                     <a href="https://www.linkedin.com/in/mariaviictoriagonzalez/" target="_blank" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                     </a>
+                     <a href="mailto:victoria@arkhon.com" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
+                        <span class="material-symbols-outlined text-lg">mail</span>
+                     </a>
+                   </div>
+                </div>
+              </div>
+              
+              <div class="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
+                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand dark:text-gold mb-1 block">Gestión & Procesos</span>
+                <h4 class="text-2xl font-extrabold text-text-primary-light dark:text-text-primary-dark mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Victoria</h4>
+                <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark font-medium">Especialista en Procesos</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Perfil: Ignacio -->
+          <div class="group opacity-0 animate-fade-in-up delay-300">
+            <div class="glass-card rounded-[2.5rem] p-6 sm:p-7 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-20px_rgba(13, 148, 136, 0.25)] border-transparent hover:border-accent/30 relative overflow-hidden">
+              <div class="absolute -top-10 -right-10 w-32 h-32 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-all duration-700"></div>
+              
+              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40 dark:bg-neutral-800">
+                <div class="absolute inset-0 bg-gradient-to-tr from-accent/40 to-indigo-900 opacity-40"></div>
+                <div class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-1000">
+                   <span class="material-symbols-outlined text-6xl text-accent/40">smart_toy</span>
+                </div>
+                <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center backdrop-blur-md translate-y-4 group-hover:translate-y-0">
+                   <p class="text-white/90 text-[13px] leading-relaxed mb-5 font-light italic">"Integramos inteligencia artificial para optimizar cada proceso de la organización."</p>
+                   <div class="flex gap-3">
+                     <a href="https://www.linkedin.com/in/ignacio-e-sanchez/" target="_blank" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                     </a>
+                     <a href="#" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
+                        <span class="material-symbols-outlined text-lg">mail</span>
+                     </a>
+                   </div>
+                </div>
+              </div>
+              
+              <div class="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
+                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand dark:text-gold mb-1 block">Estrategia & IA</span>
+                <h4 class="text-2xl font-extrabold text-text-primary-light dark:text-text-primary-dark mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Ignacio</h4>
+                <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark font-medium">Socio Tecnológico</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Servicios -->
     <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative overflow-hidden" id="servicios">
-      <div class="absolute inset-0 bg-neutral-100/50 dark:bg-neutral-900/50 border-y border-neutral-200/50 dark:border-neutral-800/50 -z-10"></div>
+      <div class="absolute inset-0 bg-slate-50 dark:bg-neutral-900 border-y border-border-light dark:border-neutral-800/50 -z-10"></div>
       <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-12 sm:mb-16 md:mb-24 opacity-0 animate-fade-in-up delay-100 gap-4">
           <div>
-            <h2 class="text-xs font-bold uppercase tracking-mega text-accent mb-4 sm:mb-6 flex items-center space-x-3">
-              <span class="w-8 h-[1px] bg-accent"></span>
-              <span>Capabilities / 04</span>
+            <h2 class="text-xs font-bold uppercase tracking-mega text-gold mb-4 sm:mb-6 flex items-center space-x-3">
+              <span class="w-8 h-[1px] bg-gold"></span>
+              <span>Capacidades / 04</span>
             </h2>
-            <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-primary dark:text-white">Servicios</h3>
+            <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-neutral-900 dark:text-white">Servicios</h3>
           </div>
         </div>
 
@@ -124,7 +242,7 @@
           <!-- Card 1 -->
           <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-100 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-900/40 dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
               <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">query_stats</span>
             </div>
             <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Diagnóstico de gestión</h3>
@@ -134,7 +252,7 @@
           <!-- Card 2 -->
           <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-200 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-900/40 dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
               <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">account_balance_wallet</span>
             </div>
             <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Acompañamiento ejecutivo</h3>
@@ -144,21 +262,21 @@
           <!-- Card 3 -->
           <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-300 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-900/40 dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
               <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">architecture</span>
             </div>
             <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Planificación estratégica</h3>
-            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Diseño de funciones administrativas y definición de procesos de control para sostener resultados.</p>
+            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Apoyar a las empresas en el desarrollo de sus procesos negocios y en la planificación </p>
           </div>
 
           <!-- Card 4 -->
           <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-400 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">monitoring</span>
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-900/40 dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">query_stats</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Control Financiero</h3>
-            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Armado de presupuestos y estados financieros proyectados para máxima previsibilidad.</p>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Control de Gestión</h3>
+            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Optimización de procesos operativos y financieros para asegurar la eficiencia del modelo de negocio.</p>
           </div>
         </div>
       </div>
@@ -170,59 +288,60 @@
         <div class="grid lg:grid-cols-2 gap-14 lg:gap-32 items-center">
 
           <div class="opacity-0 animate-fade-in-up delay-100">
-            <h2 class="text-xs font-bold uppercase tracking-mega text-accent mb-4 sm:mb-6 flex items-center space-x-3">
-              <span class="w-8 h-[1px] bg-accent"></span>
+            <h2 class="text-xs font-bold uppercase tracking-mega text-gold mb-4 sm:mb-6 flex items-center space-x-3">
+              <span class="w-8 h-[1px] bg-gold"></span>
               <span>Visión</span>
             </h2>
-            <h3 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight mb-10 sm:mb-16 dark:text-white leading-tight">Nuestro enfoque</h3>
+            <h3 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight mb-10 sm:mb-16 text-neutral-900 dark:text-white leading-tight">Nuestro enfoque</h3>
 
             <div class="space-y-8 sm:space-y-12">
               <div class="flex gap-5 sm:gap-8 group">
-                <span class="text-accent font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">01.</span>
+                <span class="text-gold font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">01.</span>
                 <div>
-                  <h4 class="text-lg sm:text-xl font-bold text-primary dark:text-white mb-2">Foco en lo esencial</h4>
-                  <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">Priorizamos las decisiones que realmente gobiernan la gestión diaria, eliminando ruido corporativo.</p>
+                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light dark:text-text-primary-dark mb-2">Foco en lo esencial</h4>
+                  <p class="text-base sm:text-lg text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Priorizamos las decisiones que realmente gobiernan la gestión diaria, eliminando ruido corporativo.</p>
                 </div>
               </div>
               <div class="flex gap-5 sm:gap-8 group">
-                <span class="text-accent font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">02.</span>
+                <span class="text-gold font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">02.</span>
                 <div>
-                  <h4 class="text-lg sm:text-xl font-bold text-primary dark:text-white mb-2">Rigor de datos</h4>
-                  <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">Ordenamos la información para que el instinto directivo se respalde con números inquebrantables.</p>
+                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light dark:text-text-primary-dark mb-2">Rigor de datos</h4>
+                  <p class="text-base sm:text-lg text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Ordenamos la información para que el instinto directivo se respalde con números inquebrantables.</p>
                 </div>
               </div>
               <div class="flex gap-5 sm:gap-8 group">
-                <span class="text-accent font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">03.</span>
+                <span class="text-gold font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">03.</span>
                 <div>
-                  <h4 class="text-lg sm:text-xl font-bold text-primary dark:text-white mb-2">Criterio profesional</h4>
-                  <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">Aportamos experiencia aplicada real en el campo, no solo teoría de manual de consultoría.</p>
+                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light dark:text-text-primary-dark mb-2">Criterio profesional</h4>
+                  <p class="text-base sm:text-lg text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Aportamos experiencia aplicada real en el campo, no solo teoría de manual de consultoría.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Card Oscura -->
+          <!-- Card Oscura (Call to Action/Validation) -->
           <div class="relative opacity-0 animate-fade-in-up delay-300">
-            <div class="absolute -inset-1 bg-gradient-to-tr from-accent to-indigo-600 rounded-[2rem] sm:rounded-[2.5rem] blur-xl opacity-30 dark:opacity-20"></div>
-            <div class="relative bg-primary dark:bg-neutral-900/80 backdrop-blur-3xl p-8 sm:p-12 md:p-16 rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden">
-              <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 blur-[80px] rounded-full pointer-events-none"></div>
-              <h3 class="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-10 relative z-10">Cuándo somos la opción correcta</h3>
+            <div class="absolute -inset-1 bg-gradient-to-tr from-primary-brand to-gold/30 rounded-[2rem] sm:rounded-[2.5rem] blur-lg opacity-20"></div>
+            <div class="relative bg-primary-brand p-8 sm:p-12 md:p-16 rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden">
+              <div class="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[80px] rounded-full pointer-events-none"></div>
+              <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2 relative z-10">¿Cuándo somos la opción correcta?</h3>
+              <p class="text-sm sm:text-base text-blue-100/70 mb-8 sm:mb-10 relative z-10 font-medium italic">Cuando las empresas se encuentran en alguna de estas situaciones:</p>
               <ul class="space-y-5 sm:space-y-8 relative z-10">
                 <li class="flex items-start space-x-4 sm:space-x-5 group">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)] flex-shrink-0"></span>
-                  <span class="text-base sm:text-lg text-neutral-300 group-hover:text-white transition-colors">Crecimiento con sensación de desorden administrativo.</span>
+                  <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-gold shadow-[0_0_15px_rgba(197,160,89,0.6)] flex-shrink-0"></span>
+                  <span class="text-base sm:text-lg text-white font-medium group-hover:text-gold transition-colors">Crecimiento con sensación de desorden administrativo.</span>
                 </li>
                 <li class="flex items-start space-x-4 sm:space-x-5 group">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)] flex-shrink-0"></span>
-                  <span class="text-base sm:text-lg text-neutral-300 group-hover:text-white transition-colors">Necesidad de mayor claridad estratégica para decidir.</span>
+                  <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-gold shadow-[0_0_15px_rgba(197,160,89,0.6)] flex-shrink-0"></span>
+                  <span class="text-base sm:text-lg text-white font-medium group-hover:text-gold transition-colors">Necesidad de mayor claridad estratégica para decidir.</span>
                 </li>
                 <li class="flex items-start space-x-4 sm:space-x-5 group">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)] flex-shrink-0"></span>
-                  <span class="text-base sm:text-lg text-neutral-300 group-hover:text-white transition-colors">Búsqueda de profesionalización sin ahogarse en burocracia.</span>
+                  <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-gold shadow-[0_0_15px_rgba(197,160,89,0.6)] flex-shrink-0"></span>
+                  <span class="text-base sm:text-lg text-white font-medium group-hover:text-gold transition-colors">Búsqueda de profesionalización sin ahogarse en burocracia.</span>
                 </li>
                 <li class="flex items-start space-x-4 sm:space-x-5 group">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(37,99,235,0.8)] flex-shrink-0"></span>
-                  <span class="text-base sm:text-lg text-neutral-300 group-hover:text-white transition-colors">Organizaciones exigentes que valoran el trabajo bien hecho.</span>
+                  <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-gold shadow-[0_0_15px_rgba(197,160,89,0.6)] flex-shrink-0"></span>
+                  <span class="text-base sm:text-lg text-white font-medium group-hover:text-gold transition-colors">Organizaciones exigentes que valoran el trabajo bien hecho.</span>
                 </li>
               </ul>
             </div>
@@ -232,20 +351,19 @@
       </div>
     </section>
 
-    <!-- Contacto -->
     <section class="py-24 sm:py-32 md:py-40 relative overflow-hidden" id="contacto">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-200/40 dark:to-accent/5 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-neutral-100/50 dark:bg-slate-900/10 pointer-events-none"></div>
       <div class="max-w-3xl mx-auto px-4 sm:px-8 relative z-10 opacity-0 animate-fade-in-up delay-100">
 
         <!-- Título -->
         <div class="text-center mb-12 sm:mb-16">
-          <h2 class="text-xs font-bold uppercase tracking-mega text-accent mb-4 sm:mb-6 flex items-center justify-center space-x-3">
-            <span class="w-8 h-[1px] bg-accent"></span>
+          <h2 class="text-xs font-bold uppercase tracking-mega text-gold mb-4 sm:mb-6 flex items-center justify-center space-x-3">
+            <span class="w-8 h-[1px] bg-gold"></span>
             <span>Contacto</span>
-            <span class="w-8 h-[1px] bg-accent"></span>
+            <span class="w-8 h-[1px] bg-gold"></span>
           </h2>
-          <h3 class="text-3xl sm:text-5xl font-extrabold text-primary dark:text-white tracking-tight leading-tight">
-            Conversemos sobre <span class="text-neutral-400 dark:text-neutral-500">su estrategia.</span>
+          <h3 class="text-3xl sm:text-5xl font-extrabold text-text-primary-light dark:text-text-primary-dark tracking-tight leading-tight">
+            Conversemos sobre <span class="text-primary-brand dark:text-gold opacity-80">su estrategia.</span>
           </h3>
         </div>
 
@@ -261,7 +379,7 @@
                 formControlName="nombre"
                 type="text"
                 placeholder="Juan García"
-                class="w-full bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-primary dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
+                class="w-full bg-slate-50 dark:bg-neutral-800/60 border border-slate-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
               />
               @if (contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched) {
                 <p class="text-xs text-red-500 mt-1.5">El nombre es requerido.</p>
@@ -274,7 +392,7 @@
                 formControlName="email"
                 type="email"
                 placeholder="juan@empresa.com"
-                class="w-full bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-primary dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
+                class="w-full bg-slate-50 dark:bg-neutral-800/60 border border-slate-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
               />
               @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
                 <p class="text-xs text-red-500 mt-1.5">Email inválido.</p>
@@ -289,7 +407,7 @@
               formControlName="telefono"
               type="tel"
               placeholder="+54 9 11 1234-5678"
-              class="w-full bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-primary dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
+              class="w-full bg-slate-50 dark:bg-neutral-800/60 border border-slate-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
             />
           </div>
 
@@ -300,7 +418,7 @@
               formControlName="mensaje"
               rows="5"
               placeholder="Contanos brevemente sobre su organización y qué necesitan mejorar..."
-              class="w-full bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-primary dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300 resize-none"
+              class="w-full bg-slate-900/40 dark:bg-neutral-800/60 border border-slate-800 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-white dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300 resize-none"
             ></textarea>
             @if (contactForm.get('mensaje')?.invalid && contactForm.get('mensaje')?.touched) {
               <p class="text-xs text-red-500 mt-1.5">El mensaje es requerido.</p>
@@ -324,8 +442,8 @@
           <button
             type="submit"
             [disabled]="sending"
-            class="w-full relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:py-5 font-bold uppercase tracking-widest text-sm text-white bg-primary dark:bg-white dark:text-primary rounded-full overflow-hidden group hover:shadow-[0_0_40px_rgba(37,99,235,0.35)] transition-all duration-500 hover:-translate-y-1 disabled:opacity-60 disabled:pointer-events-none cursor-pointer">
-            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-accent to-blue-400 group-hover:opacity-100 opacity-0 transition-opacity duration-500"></span>
+            class="w-full relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:py-5 font-bold uppercase tracking-widest text-sm text-white bg-primary-brand rounded-full overflow-hidden group shadow-[0_10px_30px_rgba(15,76,129,0.2)] dark:shadow-[0_10px_30px_rgba(56,189,248,0.1)] transition-all duration-500 hover:-translate-y-1 disabled:opacity-60 disabled:pointer-events-none cursor-pointer">
+            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-brand to-accent-glow group-hover:opacity-100 opacity-0 transition-opacity duration-500"></span>
             @if (sending) {
               <span class="material-symbols-outlined animate-spin relative z-10">progress_activity</span>
             }
@@ -334,23 +452,23 @@
             </span>
           </button>
 
-          <p class="text-center text-xs text-neutral-400 dark:text-neutral-600">O escríbanos directamente a <a href="mailto:consultas@arkhon.com.ar" class="text-accent hover:underline">consultas@arkhon.com.ar</a></p>
+          <p class="text-center text-xs text-text-secondary-light dark:text-text-secondary-dark">O escríbanos directamente a <a href="mailto:consultas@arkhon.com.ar" class="text-primary-brand hover:underline font-medium">consultas@arkhon.com.ar</a></p>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="py-10 sm:py-16 border-t border-neutral-200/50 dark:border-neutral-800/50 relative z-10 bg-white/50 dark:bg-neutral-900/20 backdrop-blur-md">
+  <footer class="py-10 sm:py-16 border-t border-border-light dark:border-neutral-800/50 relative z-10 bg-surface-light dark:bg-card-dark/40 backdrop-blur-md">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
         <div>
-          <span class="text-xl sm:text-2xl font-extrabold tracking-tighter text-primary dark:text-white">ARKHON<span class="font-light text-neutral-400">Consultora</span></span>
-          <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mt-2 sm:mt-3 font-medium">Executive Advisory &amp; Management</p>
+          <span class="text-xl sm:text-2xl font-extrabold tracking-tighter text-text-primary-light dark:text-text-primary-dark">ARKHON<span class="font-light text-text-secondary-light dark:text-text-secondary-dark">Consultora</span></span>
+          <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-text-secondary-light dark:text-text-secondary-dark mt-2 sm:mt-3 font-medium">Asesoramiento Ejecutivo y Gestión</p>
         </div>
-        <div class="flex space-x-8 sm:space-x-12 text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
-          <a class="hover:text-accent dark:hover:text-white transition-colors hover:-translate-y-1 transform duration-300" href="#">LinkedIn</a>
-          <a class="hover:text-accent dark:hover:text-white transition-colors hover:-translate-y-1 transform duration-300" href="#">Email</a>
-          <span class="text-neutral-400 dark:text-neutral-600">© 2026</span>
+        <div class="flex space-x-8 sm:space-x-12 text-xs font-bold uppercase tracking-widest text-text-secondary-light dark:text-text-secondary-dark">
+          <a class="hover:text-primary-brand dark:hover:text-gold transition-colors hover:-translate-y-1 transform duration-300" href="#">LinkedIn</a>
+          <a class="hover:text-primary-brand dark:hover:text-gold transition-colors hover:-translate-y-1 transform duration-300" href="#">Email</a>
+          <span class="text-text-secondary-light dark:text-text-secondary-dark">© 2026</span>
         </div>
       </div>
     </div>
