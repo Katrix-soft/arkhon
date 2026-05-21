@@ -1,43 +1,45 @@
-<div class="min-h-screen selection:bg-accent selection:text-white bg-surface-light dark:bg-surface-dark">
+<div class="min-h-screen selection:bg-accent selection:text-white bg-surface-light">
 
   <!-- Floating Navbar -->
   <div class="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6 md:px-8">
     <nav class="max-w-screen-2xl mx-auto glass-nav rounded-2xl px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between transition-all duration-500">
-      <div class="flex items-center min-w-0">
-        <span class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-ultra-tight text-text-primary-light dark:text-text-primary-dark transition-colors duration-500 truncate">
-          ARKHON<span class="font-light text-text-secondary-light dark:text-text-secondary-dark">Consultora</span>
-        </span>
-      </div>
+      <a href="#" class="flex items-center min-w-0 gap-3 group">
+        <!-- Isotipo sobre badge MARINE para contraste máximo -->
+        <div class="h-10 w-10 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg"
+             style="background-color: #002c55;">
+          <img src="isotipousar.png" class="h-7 w-7 sm:h-8 sm:w-8 object-contain"
+               style="filter: invert(1) brightness(2);"
+               alt="ARKHON Isotipo">
+        </div>
+        <div class="flex flex-col leading-none">
+          <span class="text-lg sm:text-xl font-extrabold tracking-[0.15em] uppercase text-white">ARKHON</span>
+          <span class="text-[9px] sm:text-[10px] font-medium tracking-[0.3em] uppercase" style="color: #B69A63;">CONSULTORA</span>
+        </div>
+      </a>
 
       <div class="flex items-center gap-3 sm:gap-6 flex-shrink-0">
-        <div class="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] font-bold uppercase tracking-widest text-text-secondary-light dark:text-text-secondary-dark">
-          <a class="hover:text-accent dark:hover:text-white transition-colors duration-300 relative group" href="#servicios">
+        <div class="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] font-bold uppercase tracking-widest text-white/70">
+          <a class="hover:text-white transition-colors duration-300 relative group" href="#servicios">
             Servicios
-            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-white/60 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a class="hover:text-accent dark:hover:text-white transition-colors duration-300 relative group" href="#equipo">
+          <a class="hover:text-white transition-colors duration-300 relative group" href="#equipo">
             Equipo
-            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-white/60 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a class="hover:text-accent dark:hover:text-white transition-colors duration-300 relative group" href="#enfoque">
+          <a class="hover:text-white transition-colors duration-300 relative group" href="#enfoque">
             Enfoque
-            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-white/60 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a class="text-text-primary-light dark:text-text-primary-dark hover:text-primary-brand transition-colors duration-300 relative group" href="#contacto">
+          <a class="text-white hover:text-white/80 transition-colors duration-300 relative group" href="#contacto">
             Contacto
-            <span class="absolute -bottom-2 left-0 w-full h-[2px] bg-primary-brand shadow-[0_0_10px_rgba(15,76,129,0.2)]"></span>
+            <span class="absolute -bottom-2 left-0 w-full h-[2px]" style="background-color: #B69A63;"></span>
           </a>
         </div>
 
-        <div class="flex items-center border-l border-slate-800/50 dark:border-neutral-700/50 pl-3 sm:pl-6 space-x-2">
+        <div class="md:hidden flex items-center border-l border-white/20 pl-3 sm:pl-6 space-x-2">
           <button
-            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-card-light dark:bg-card-dark text-text-secondary-light dark:text-text-secondary-dark hover:text-primary-brand dark:hover:text-gold hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer shadow-sm border border-border-light dark:border-white/5"
-            (click)="toggleDarkMode()"
-            aria-label="Cambiar tema">
-            <span class="material-symbols-outlined text-lg sm:text-xl">contrast</span>
-          </button>
-          <button
-            class="md:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-card-light dark:bg-card-dark text-text-secondary-light dark:text-text-secondary-dark hover:text-primary-brand dark:hover:text-gold active:scale-95 transition-all duration-300 cursor-pointer shadow-sm border border-border-light dark:border-white/5"
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-white/10 text-white/70 hover:text-white hover:bg-white/20 active:scale-95 transition-all duration-300 cursor-pointer"
             (click)="toggleMobileMenu()"
             aria-label="Menú móvil">
             <span class="material-symbols-outlined text-xl sm:text-2xl">{{ isMobileMenuOpen ? 'close' : 'menu' }}</span>
@@ -64,15 +66,30 @@
     <div class="absolute top-1/2 left-1/2 -translate-x-[30%] -translate-y-[20%] w-[200px] sm:w-[400px] md:w-[600px] h-[200px] sm:h-[400px] md:h-[600px] bg-indigo-500/10 rounded-full blur-[60px] sm:blur-[100px] md:blur-[120px] -z-10 pointer-events-none mix-blend-multiply dark:mix-blend-screen transition-all duration-1000"></div>
 
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 w-full z-10">
-      <div class="max-w-5xl opacity-0 animate-fade-in-up">
-        <!-- Pill removed as requested -->
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-7 max-w-5xl opacity-0 animate-fade-in-up">
+          <!-- Pill removed as requested -->
 
-        <h1 class="text-[2.8rem] sm:text-6xl md:text-[6rem] lg:text-[7.5rem] font-extrabold tracking-ultra-tight leading-[0.95] mb-6 sm:mb-10 md:mb-12 text-gradient">
-          Hacer bien <br class="hidden sm:block"/>lo que importa.
-        </h1>
-        <p class="text-lg sm:text-2xl md:text-3xl text-text-secondary-light dark:text-text-secondary-dark font-light leading-snug max-w-3xl opacity-0 animate-fade-in-up delay-200">
-          Gestión Administrativa, Económica y Financiera de alto nivel para organizaciones que exigen precisión, criterio y sostenibilidad.
-        </p>
+          <h1 class="text-[2.8rem] sm:text-6xl md:text-[6rem] lg:text-[7.5rem] font-extrabold tracking-ultra-tight leading-[0.95] mb-6 sm:mb-10 md:mb-12 text-gradient">
+            Hacer bien <br class="hidden sm:block"/>lo que importa.
+          </h1>
+          <p class="text-lg sm:text-2xl md:text-3xl text-text-secondary-light dark:text-text-secondary-dark font-light leading-snug max-w-3xl opacity-0 animate-fade-in-up delay-200">
+            Gestión Administrativa, Económica y Financiera de alto nivel para organizaciones que exigen precisión, criterio y sostenibilidad.
+          </p>
+        </div>
+        <!-- <div class="lg:col-span-5 flex justify-center items-center opacity-0 animate-fade-in-up delay-300">
+       
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-tr from-secondary/30 to-accent/20 rounded-[3.5rem] blur-2xl opacity-60"></div>
+            <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-[3rem] p-6 sm:p-8 overflow-hidden flex items-center justify-center shadow-[0_30px_80px_-10px_rgba(0,44,85,0.2)] border border-secondary/25"
+                 style="background: linear-gradient(135deg, #ffffff 60%, #f5f0e8 100%);">
+           
+              <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-accent/30 to-transparent rounded-bl-[3rem]"></div>
+              <div class="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-secondary/20 to-transparent rounded-tr-[2rem]"></div>
+              <img src="logo 2.png" class="w-full h-full object-contain relative z-10" alt="ARKHON Logo">
+            </div>
+          </div>
+        </div> -->
       </div>
     </div>
   </header>
@@ -240,49 +257,141 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           <!-- Card 1 -->
-          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-100 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-900/40 dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">query_stats</span>
+          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 group opacity-0 animate-fade-in-up delay-100 relative overflow-hidden border border-transparent hover:border-secondary/30">
+            <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl transition-all duration-500" style="background: rgba(0,44,85,0.06);"></div>
+            <!-- Ícono: fondo MARINE, ícono blanco -->
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10 shadow-lg"
+                 style="background-color: #002c55;">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-white">query_stats</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Diagnóstico de gestión</h3>
-            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Análisis profundo de la estructura organizacional para identificar riesgos y áreas críticas de mejora.</p>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light dark:text-white">Diagnóstico de gestión</h3>
+            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light dark:text-text-secondary-dark">Análisis profundo de la estructura organizacional para identificar riesgos y áreas críticas de mejora.</p>
           </div>
 
           <!-- Card 2 -->
-          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-200 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-900/40 dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">account_balance_wallet</span>
+          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 group opacity-0 animate-fade-in-up delay-200 relative overflow-hidden border border-transparent hover:border-secondary/30">
+            <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl transition-all duration-500" style="background: rgba(123,103,39,0.06);"></div>
+            <!-- Ícono: fondo BRASS, ícono blanco -->
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10 shadow-lg"
+                 style="background-color: #7b6727;">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-white">account_balance_wallet</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Acompañamiento ejecutivo</h3>
-            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Soporte continuo a directivos en la revisión periódica de las decisiones y optimización de procesos.</p>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light dark:text-white">Acompañamiento ejecutivo</h3>
+            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light dark:text-text-secondary-dark">Soporte continuo a directivos en la revisión periódica de las decisiones y optimización de procesos.</p>
           </div>
 
           <!-- Card 3 -->
-          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-300 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-900/40 dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">architecture</span>
+          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 group opacity-0 animate-fade-in-up delay-300 relative overflow-hidden border border-transparent hover:border-secondary/30">
+            <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl transition-all duration-500" style="background: rgba(78,69,42,0.06);"></div>
+            <!-- Ícono: fondo TIMBER, ícono blanco -->
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10 shadow-lg"
+                 style="background-color: #4e452a;">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-white">architecture</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Planificación estratégica</h3>
-            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Apoyar a las empresas en el desarrollo de sus procesos negocios y en la planificación </p>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light dark:text-white">Planificación estratégica</h3>
+            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light dark:text-text-secondary-dark">Apoyar a las empresas en el desarrollo de sus procesos negocios y en la planificación.</p>
           </div>
 
           <!-- Card 4 -->
-          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl hover:border-accent/30 dark:hover:border-accent/40 transition-all duration-500 group opacity-0 animate-fade-in-up delay-400 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-900/40 dark:bg-neutral-800 shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-accent">query_stats</span>
+          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 group opacity-0 animate-fade-in-up delay-400 relative overflow-hidden border border-transparent hover:border-secondary/30">
+            <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl transition-all duration-500" style="background: rgba(137,174,200,0.08);"></div>
+            <!-- Ícono: fondo SLATE, ícono MARINE -->
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10 shadow-lg"
+                 style="background-color: #89aec8;">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl" style="color: #002c55;">analytics</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 dark:text-white relative z-10">Control de Gestión</h3>
-            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed relative z-10">Optimización de procesos operativos y financieros para asegurar la eficiencia del modelo de negocio.</p>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light dark:text-white">Control de Gestión</h3>
+            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light dark:text-text-secondary-dark">Optimización de procesos operativos y financieros para asegurar la eficiencia del modelo de negocio.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Empresas con las que colaboramos -->
+    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative overflow-hidden" id="colaboraciones">
+      <div class="absolute inset-0 bg-slate-50 dark:bg-neutral-900 border-y border-border-light dark:border-neutral-800/50 -z-10"></div>
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+
+          <!-- Columna izquierda: título -->
+          <div class="lg:col-span-4 opacity-0 animate-fade-in-up">
+            <div class="lg:sticky lg:top-40">
+              <h2 class="text-xs font-bold uppercase tracking-mega mb-4 sm:mb-6 flex items-center space-x-3" style="color: #7b6727;">
+                <span class="w-8 h-[1px] inline-block" style="background-color: #7b6727;"></span>
+                <span>Confianza</span>
+              </h2>
+              <h3 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-text-primary-light">
+                Empresas que <span class="text-gold">confían</span> en nosotros
+              </h3>
+              <p class="text-base sm:text-lg leading-relaxed text-text-secondary-light">
+                Organizaciones que eligieron a ARKHON para acompañar sus procesos de gestión y toma de decisiones.
+              </p>
+              <div class="w-12 h-[2px] mt-8 bg-gold"></div>
+            </div>
+          </div>
+
+          <!-- Columna derecha: logos -->
+          <div class="lg:col-span-8 opacity-0 animate-fade-in-up delay-200">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 w-full">
+              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
+                <img src="igm.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-500" alt="IGM">
+              </a>
+              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
+                <img src="franchi.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-500" alt="Franchi">
+              </a>
+              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
+                <img src="peralta.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-500" alt="Peralta">
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Socios Estratégicos -->
+    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative overflow-hidden" id="socios">
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+
+          <!-- Columna izquierda: título -->
+          <div class="lg:col-span-4 opacity-0 animate-fade-in-up">
+            <div class="lg:sticky lg:top-40">
+              <h2 class="text-xs font-bold uppercase tracking-mega mb-4 sm:mb-6 flex items-center space-x-3 text-accent">
+                <span class="w-8 h-[1px] inline-block bg-accent"></span>
+                <span>Red estratégica</span>
+              </h2>
+              <h3 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-text-primary-light">
+                Socios <span class="text-primary-brand">estratégicos</span>
+              </h3>
+              <p class="text-base sm:text-lg leading-relaxed text-text-secondary-light">
+                Trabajamos junto a organizaciones de referencia para brindar soluciones integrales y de alto impacto.
+              </p>
+              <div class="w-12 h-[2px] mt-8 bg-primary-brand"></div>
+            </div>
+          </div>
+
+          <!-- Columna derecha: logos -->
+          <div class="lg:col-span-8 opacity-0 animate-fade-in-up delay-200">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 w-full">
+              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
+                <img src="katrix.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain opacity-75 group-hover:opacity-100 transition-all duration-500" alt="Katrix">
+              </a>
+              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
+                <img src="tero.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain opacity-75 group-hover:opacity-100 transition-all duration-500" alt="Tero">
+              </a>
+              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
+                <img src="alue.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain opacity-75 group-hover:opacity-100 transition-all duration-500" alt="Alue">
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Enfoque -->
+
     <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative" id="enfoque">
       <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
         <div class="grid lg:grid-cols-2 gap-14 lg:gap-32 items-center">
@@ -442,7 +551,7 @@
           <button
             type="submit"
             [disabled]="sending"
-            class="w-full relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:py-5 font-bold uppercase tracking-widest text-sm text-white bg-primary-brand rounded-full overflow-hidden group shadow-[0_10px_30px_rgba(15,76,129,0.2)] dark:shadow-[0_10px_30px_rgba(56,189,248,0.1)] transition-all duration-500 hover:-translate-y-1 disabled:opacity-60 disabled:pointer-events-none cursor-pointer">
+            class="w-full relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:py-5 font-bold uppercase tracking-widest text-sm text-white bg-primary-brand rounded-full overflow-hidden group shadow-[0_10px_30px_rgba(0,44,85,0.25)] dark:shadow-[0_10px_30px_rgba(137,174,200,0.15)] transition-all duration-500 hover:-translate-y-1 disabled:opacity-60 disabled:pointer-events-none cursor-pointer">
             <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-brand to-accent-glow group-hover:opacity-100 opacity-0 transition-opacity duration-500"></span>
             @if (sending) {
               <span class="material-symbols-outlined animate-spin relative z-10">progress_activity</span>
@@ -462,7 +571,7 @@
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
         <div>
-          <span class="text-xl sm:text-2xl font-extrabold tracking-tighter text-text-primary-light dark:text-text-primary-dark">ARKHON<span class="font-light text-text-secondary-light dark:text-text-secondary-dark">Consultora</span></span>
+          <img src="logo 2.png" class="h-10 w-auto max-w-[200px] object-contain object-left mix-blend-multiply dark:mix-blend-normal dark:invert dark:hue-rotate-180 mb-2" alt="ARKHON Logo">
           <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-text-secondary-light dark:text-text-secondary-dark mt-2 sm:mt-3 font-medium">Asesoramiento Ejecutivo y Gestión</p>
         </div>
         <div class="flex space-x-8 sm:space-x-12 text-xs font-bold uppercase tracking-widest text-text-secondary-light dark:text-text-secondary-dark">

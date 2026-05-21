@@ -1,35 +1,53 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+/* ─── Paleta ARKHON ─────────────────────────────────── */
+:root {
+  /* Nombres semánticos */
+  --primary:    #002c55;   /* MARINE   — azul marino profundo     */
+  --secondary:  #7b6727;   /* BRASS    — dorado oscuro             */
+  --background: #f0f6f7;   /* FROST    — fondo blanco azulado      */
+  --text:       #0b0e29;   /* MIDNIGHT — texto principal oscuro    */
+  --accent:     #89aec8;   /* SLATE    — acento azul suave         */
+
+  /* Tokens adicionales */
+  --timber:     #4e452a;   /* TIMBER   — café/dorado tierra        */
+  --midnight:   #0b0e29;   /* MIDNIGHT — superficies más oscuras   */
+  --marine:     #002c55;   /* MARINE   — alias semántico           */
+  --frost:      #f0f6f7;   /* FROST    — alias semántico           */
+  --slate:      #89aec8;   /* SLATE    — alias semántico           */
+  --brass:      #7b6727;   /* BRASS    — alias semántico           */
+}
 
 @theme {
-  /* Arkhon Official Brand Palette */
-  --color-primary-brand: #0f4c81;    /* Deep Sapphire Blue */
-  --color-gold: #c5a059;             /* Champagne Gold */
-  --color-accent: var(--color-primary-brand);
-  --color-accent-glow: #38bdf8;      /* Cyan/Azure (Dark Mode Active) */
-  
-  /* Success & Risk (Utility) */
+  /* ── Marca ────────────────────────────────────────── */
+  --color-primary-brand:  var(--primary);    /* MARINE  */
+  --color-primary:        var(--primary);
+  --color-secondary:      var(--secondary);  /* BRASS   */
+  --color-gold:           var(--secondary);
+  --color-accent:         var(--accent);     /* SLATE   */
+  --color-accent-glow:    var(--slate);
+  --color-timber:         var(--timber);     /* TIMBER  */
+
+  /* ── Utilidad ─────────────────────────────────────── */
   --color-success: #10b981;
-  --color-risk: #ef4444;
+  --color-risk:    #ef4444;
 
-  /* Theme Surfaces */
-  --color-surface-light: #f8fafc;
-  --color-surface-dark: #0f172a;
-  --color-card-light: #ffffff;
-  --color-card-dark: #1e293b;
-  
-  /* Typography */
-  --color-text-primary-light: #1e293b;
-  --color-text-secondary-light: #64748b;
-  --color-text-primary-dark: #f1f5f9;
-  --color-text-secondary-dark: #94a3b8;
-  
-  --color-border-light: #e2e8f0;
+  /* ── Superficies ──────────────────────────────────── */
+  --color-surface-light: var(--frost);      /* FROST   */
+  --color-card-light:    #ffffff;
 
-  --font-sans: "Inter", "Outfit", sans-serif;
-  --tracking-ultra-tight: -0.06em;
-  --tracking-mega: 0.2em;
+  /* ── Tipografía ───────────────────────────────────── */
+  --color-text-primary-light:   var(--midnight);  /* MIDNIGHT */
+  --color-text-secondary-light: #5a6a82;
+
+  /* ── Bordes ───────────────────────────────────────── */
+  --color-border-light: #d4dde8;
+
+  /* ── Tipografía & Tracking ────────────────────────── */
+  --font-sans:             "Inter", "Outfit", sans-serif;
+  --tracking-ultra-tight:  -0.06em;
+  --tracking-mega:          0.2em;
 }
+
 
 @layer base {
   *, ::before, ::after {
@@ -42,17 +60,13 @@
     @apply bg-surface-light text-text-primary-light antialiased selection:bg-primary-brand selection:text-white transition-colors duration-700;
   }
 
-  .dark body {
-    @apply bg-surface-dark text-text-primary-dark;
-  }
-
   /* Force smooth scroll */
   html {
     scroll-behavior: smooth;
   }
 
   .material-symbols-outlined {
-    font-variation-settings: 'wght' 300, 'FILL' 0;
+    font-variation-settings: 'wght' 300, 'FILL' 0, 'opsz' 24;
   }
 }
 
@@ -60,29 +74,21 @@
   .executive-border {
     border-left: 2px solid var(--color-neutral-200);
   }
-  
-  .dark .executive-border {
-    border-left: 2px solid var(--color-neutral-800);
-  }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-text-primary-light to-primary-brand dark:from-text-primary-dark dark:to-accent-glow;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-text-primary-light to-primary-brand;
   }
 
   .glass-nav {
-    @apply bg-card-light/90 border-b border-border-light shadow-[0_4px_24px_rgba(0,0,0,0.04)] backdrop-blur-xl;
-  }
-
-  .dark .glass-nav {
-    @apply bg-card-dark/40 border-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] backdrop-blur-3xl;
+    background: rgba(0, 44, 85, 0.92);
+    border-bottom: 1px solid rgba(137, 174, 200, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 44, 85, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
   .glass-card {
     @apply bg-card-light border border-border-light shadow-[0_8px_30px_rgba(0,0,0,0.04)];
-  }
-
-  .dark .glass-card {
-    @apply bg-card-dark border-white/5 shadow-2xl;
   }
 
   /* Removed Grid Background */

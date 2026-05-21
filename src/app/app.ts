@@ -27,10 +27,6 @@ export class App {
     });
   }
 
-  toggleDarkMode() {
-    document.documentElement.classList.toggle('dark');
-  }
-
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
