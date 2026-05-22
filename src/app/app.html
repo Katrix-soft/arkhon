@@ -51,10 +51,10 @@
     <!-- Mobile Menu -->
     @if (isMobileMenuOpen) {
       <div class="md:hidden mt-2 glass-nav rounded-2xl p-5 flex flex-col space-y-5 animate-fade-in-up" style="animation-duration:0.25s">
-        <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 hover:text-accent dark:hover:text-white py-1" href="#servicios" (click)="toggleMobileMenu()">Servicios</a>
-        <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 hover:text-accent dark:hover:text-white py-1" href="#equipo" (click)="toggleMobileMenu()">Equipo</a>
-        <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 hover:text-accent dark:hover:text-white py-1" href="#enfoque" (click)="toggleMobileMenu()">Enfoque</a>
-        <a class="text-sm font-bold uppercase tracking-widest text-white dark:text-white hover:text-accent py-1" href="#contacto" (click)="toggleMobileMenu()">Contacto</a>
+        <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 hover:text-accent py-1" href="#servicios" (click)="toggleMobileMenu()">Servicios</a>
+        <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 hover:text-accent py-1" href="#equipo" (click)="toggleMobileMenu()">Equipo</a>
+        <a class="text-sm font-bold uppercase tracking-widest text-neutral-500 hover:text-accent py-1" href="#enfoque" (click)="toggleMobileMenu()">Enfoque</a>
+        <a class="text-sm font-bold uppercase tracking-widest text-white hover:text-accent py-1" href="#contacto" (click)="toggleMobileMenu()">Contacto</a>
       </div>
     }
   </div>
@@ -62,8 +62,8 @@
   <!-- Hero -->
   <header class="relative pt-28 sm:pt-36 md:pt-48 pb-20 sm:pb-28 md:pb-40 overflow-hidden flex items-center">
     <!-- Glowing Orbs -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-[60%] -translate-y-1/2 w-[280px] sm:w-[500px] md:w-[700px] h-[280px] sm:h-[500px] md:h-[700px] bg-accent/20 dark:bg-accent/10 rounded-full blur-[80px] sm:blur-[120px] md:blur-[140px] -z-10 pointer-events-none mix-blend-multiply dark:mix-blend-screen transition-all duration-1000"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-[30%] -translate-y-[20%] w-[200px] sm:w-[400px] md:w-[600px] h-[200px] sm:h-[400px] md:h-[600px] bg-indigo-500/10 rounded-full blur-[60px] sm:blur-[100px] md:blur-[120px] -z-10 pointer-events-none mix-blend-multiply dark:mix-blend-screen transition-all duration-1000"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-[60%] -translate-y-1/2 w-[280px] sm:w-[500px] md:w-[700px] h-[280px] sm:h-[500px] md:h-[700px] bg-accent/20 rounded-full blur-[80px] sm:blur-[120px] md:blur-[140px] -z-10 pointer-events-none mix-blend-multiply transition-all duration-1000"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-[30%] -translate-y-[20%] w-[200px] sm:w-[400px] md:w-[600px] h-[200px] sm:h-[400px] md:h-[600px] bg-indigo-500/10 rounded-full blur-[60px] sm:blur-[100px] md:blur-[120px] -z-10 pointer-events-none mix-blend-multiply transition-all duration-1000"></div>
 
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 w-full z-10">
       <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -73,7 +73,7 @@
           <h1 class="text-[2.8rem] sm:text-6xl md:text-[6rem] lg:text-[7.5rem] font-extrabold tracking-ultra-tight leading-[0.95] mb-6 sm:mb-10 md:mb-12 text-gradient">
             Hacer bien <br class="hidden sm:block"/>lo que importa.
           </h1>
-          <p class="text-lg sm:text-2xl md:text-3xl text-text-secondary-light dark:text-text-secondary-dark font-light leading-snug max-w-3xl opacity-0 animate-fade-in-up delay-200">
+          <p class="text-lg sm:text-2xl md:text-3xl text-text-secondary-light font-light leading-snug max-w-3xl opacity-0 animate-fade-in-up delay-200">
             Gestión Administrativa, Económica y Financiera de alto nivel para organizaciones que exigen precisión, criterio y sostenibilidad.
           </p>
         </div>
@@ -105,19 +105,19 @@
                 <span class="w-8 h-[1px] bg-gold"></span>
                 <span>La Misión</span>
               </h2>
-              <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white leading-tight">Ordenamos la toma de decisiones.</h3>
+              <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 leading-tight">Ordenamos la toma de decisiones.</h3>
             </div>
           </div>
           <div class="lg:col-span-8 grid sm:grid-cols-2 gap-8 lg:gap-16 pt-2">
             <div class="executive-border pl-6 sm:pl-8 md:pl-10 relative group">
               <div class="absolute -left-[2px] top-0 w-[2px] h-0 bg-accent group-hover:h-full transition-all duration-700 ease-out"></div>
-              <p class="text-base sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 font-light leading-relaxed">
-                En <span class="text-neutral-900 dark:text-white font-medium">ARKHON</span> acompañamos a la dirección y sus equipos de trabajo en la arquitectura de su gestión económica. Trabajamos sobre los fundamentos que gobiernan la organización.
+              <p class="text-base sm:text-xl md:text-2xl text-neutral-600 font-light leading-relaxed">
+                En <span class="text-neutral-900 font-medium">ARKHON</span> acompañamos a la dirección y sus equipos de trabajo en la arquitectura de su gestión económica. Trabajamos sobre los fundamentos que gobiernan la organización.
               </p>
             </div>
             <div class="executive-border pl-6 sm:pl-8 md:pl-10 relative group">
               <div class="absolute -left-[2px] top-0 w-[2px] h-0 bg-accent group-hover:h-full transition-all duration-700 ease-out"></div>
-              <p class="text-base sm:text-xl md:text-2xl text-neutral-400 dark:text-neutral-400 font-light leading-relaxed">
+              <p class="text-base sm:text-xl md:text-2xl text-neutral-400 font-light leading-relaxed">
                 Nuestro enfoque es riguroso, analítico y centrado en la problemática de fondo para aportar previsibilidad.
               </p>
             </div>
@@ -134,7 +134,7 @@
             <span class="w-8 h-[1px] bg-gold"></span>
             <span>Equipo / 03</span>
           </h2>
-          <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-neutral-900 dark:text-white">Nuestro Equipo</h3>
+          <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-neutral-900">Nuestro Equipo</h3>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14 max-w-6xl mx-auto">
@@ -143,7 +143,7 @@
             <div class="glass-card rounded-[2.5rem] p-6 sm:p-7 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] border-transparent hover:border-accent/30 relative overflow-hidden">
               <div class="absolute -top-10 -right-10 w-32 h-32 bg-indigo-500/5 rounded-full blur-3xl group-hover:bg-indigo-500/10 transition-all duration-700"></div>
               
-              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40 dark:bg-neutral-800">
+              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40">
                 <div class="absolute inset-0 bg-gradient-to-tr from-primary/80 to-indigo-600/30 opacity-40"></div>
                 <div class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-1000">
                    <span class="material-symbols-outlined text-6xl text-indigo-400/40">person_4</span>
@@ -164,9 +164,9 @@
               </div>
               
               <div class="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
-                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand dark:text-gold mb-1 block">Socio Fundador</span>
-                <h4 class="text-2xl font-extrabold text-text-primary-light dark:text-text-primary-dark mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Pablo Moya</h4>
-                <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark font-medium">Asesor Estratégico</p>
+                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand mb-1 block">Socio Fundador</span>
+                <h4 class="text-2xl font-extrabold text-text-primary-light mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Pablo Moya</h4>
+                <p class="text-sm text-text-secondary-light font-medium">Asesor Estratégico</p>
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@
             <div class="glass-card rounded-[2.5rem] p-6 sm:p-7 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-20px_rgba(13, 148, 136, 0.25)] border-transparent hover:border-accent/30 relative overflow-hidden">
               <div class="absolute -top-10 -right-10 w-32 h-32 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-all duration-700"></div>
               
-              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40 dark:bg-neutral-800">
+              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40">
                 <div class="absolute inset-0 bg-gradient-to-tr from-primary to-accent/30 opacity-40"></div>
                 <div class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-1000">
                    <span class="material-symbols-outlined text-6xl text-accent/40">person_3</span>
@@ -197,9 +197,9 @@
               </div>
               
               <div class="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
-                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand dark:text-gold mb-1 block">Gestión & Procesos</span>
-                <h4 class="text-2xl font-extrabold text-text-primary-light dark:text-text-primary-dark mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Victoria Gonzalez</h4>
-                <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark font-medium">Especialista en Procesos</p>
+                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand mb-1 block">Gestión & Procesos</span>
+                <h4 class="text-2xl font-extrabold text-text-primary-light mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Victoria Gonzalez</h4>
+                <p class="text-sm text-text-secondary-light font-medium">Especialista en Procesos</p>
               </div>
             </div>
           </div>
@@ -209,7 +209,7 @@
             <div class="glass-card rounded-[2.5rem] p-6 sm:p-7 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-20px_rgba(13, 148, 136, 0.25)] border-transparent hover:border-accent/30 relative overflow-hidden">
               <div class="absolute -top-10 -right-10 w-32 h-32 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-all duration-700"></div>
               
-              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40 dark:bg-neutral-800">
+              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40">
                 <div class="absolute inset-0 bg-gradient-to-tr from-accent/40 to-indigo-900 opacity-40"></div>
                 <div class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-1000">
                    <span class="material-symbols-outlined text-6xl text-accent/40">smart_toy</span>
@@ -230,9 +230,9 @@
               </div>
               
               <div class="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
-                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand dark:text-gold mb-1 block">Estrategia & IA</span>
-                <h4 class="text-2xl font-extrabold text-text-primary-light dark:text-text-primary-dark mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Ignacio Sanchez</h4>
-                <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark font-medium">Socio Tecnológico</p>
+                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand mb-1 block">Estrategia & IA</span>
+                <h4 class="text-2xl font-extrabold text-text-primary-light mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Ignacio Sanchez</h4>
+                <p class="text-sm text-text-secondary-light font-medium">Socio Tecnológico</p>
               </div>
             </div>
           </div>
@@ -243,7 +243,7 @@
 
     <!-- Servicios -->
     <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative overflow-hidden" id="servicios">
-      <div class="absolute inset-0 bg-slate-50 dark:bg-neutral-900 border-y border-border-light dark:border-neutral-800/50 -z-10"></div>
+      <div class="absolute inset-0 bg-slate-50 border-y border-border-light -z-10"></div>
       <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-12 sm:mb-16 md:mb-24 opacity-0 animate-fade-in-up delay-100 gap-4">
           <div>
@@ -251,7 +251,7 @@
               <span class="w-8 h-[1px] bg-gold"></span>
               <span>Capacidades / 04</span>
             </h2>
-            <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-neutral-900 dark:text-white">Servicios</h3>
+            <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-neutral-900">Servicios</h3>
           </div>
         </div>
 
@@ -264,8 +264,8 @@
                  style="background-color: #002c55;">
               <span class="material-symbols-outlined text-3xl sm:text-4xl text-white">query_stats</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light dark:text-white">Diagnóstico de gestión</h3>
-            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light dark:text-text-secondary-dark">Análisis profundo de la estructura organizacional para identificar riesgos y áreas críticas de mejora.</p>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light">Diagnóstico de gestión</h3>
+            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light">Análisis profundo de la estructura organizacional para identificar riesgos y áreas críticas de mejora.</p>
           </div>
 
           <!-- Card 2 -->
@@ -276,8 +276,8 @@
                  style="background-color: #7b6727;">
               <span class="material-symbols-outlined text-3xl sm:text-4xl text-white">account_balance_wallet</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light dark:text-white">Acompañamiento ejecutivo</h3>
-            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light dark:text-text-secondary-dark">Soporte continuo a directivos en la revisión periódica de las decisiones y optimización de procesos.</p>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light">Acompañamiento ejecutivo</h3>
+            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light">Soporte continuo a directivos en la revisión periódica de las decisiones y optimización de procesos.</p>
           </div>
 
           <!-- Card 3 -->
@@ -288,8 +288,8 @@
                  style="background-color: #4e452a;">
               <span class="material-symbols-outlined text-3xl sm:text-4xl text-white">architecture</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light dark:text-white">Planificación estratégica</h3>
-            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light dark:text-text-secondary-dark">Apoyar a las empresas en el desarrollo de sus procesos negocios y en la planificación.</p>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light">Planificación estratégica</h3>
+            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light">Apoyar a las empresas en el desarrollo de sus procesos negocios y en la planificación.</p>
           </div>
 
           <!-- Card 4 -->
@@ -300,8 +300,8 @@
                  style="background-color: #89aec8;">
               <span class="material-symbols-outlined text-3xl sm:text-4xl" style="color: #002c55;">analytics</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light dark:text-white">Control de Gestión</h3>
-            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light dark:text-text-secondary-dark">Optimización de procesos operativos y financieros para asegurar la eficiencia del modelo de negocio.</p>
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light">Control de Gestión</h3>
+            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light">Optimización de procesos operativos y financieros para asegurar la eficiencia del modelo de negocio.</p>
           </div>
         </div>
       </div>
@@ -309,7 +309,7 @@
 
     <!-- Empresas con las que colaboramos -->
     <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative overflow-hidden" id="colaboraciones">
-      <div class="absolute inset-0 bg-slate-50 dark:bg-neutral-900 border-y border-border-light dark:border-neutral-800/50 -z-10"></div>
+      <div class="absolute inset-0 bg-slate-50 border-y border-border-light -z-10"></div>
       <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
 
@@ -401,28 +401,28 @@
               <span class="w-8 h-[1px] bg-gold"></span>
               <span>Visión</span>
             </h2>
-            <h3 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight mb-10 sm:mb-16 text-neutral-900 dark:text-white leading-tight">Nuestro enfoque</h3>
+            <h3 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight mb-10 sm:mb-16 text-neutral-900 leading-tight">Nuestro enfoque</h3>
 
             <div class="space-y-8 sm:space-y-12">
               <div class="flex gap-5 sm:gap-8 group">
                 <span class="text-gold font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">01.</span>
                 <div>
-                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light dark:text-text-primary-dark mb-2">Foco en lo esencial</h4>
-                  <p class="text-base sm:text-lg text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Priorizamos las decisiones que realmente gobiernan la gestión diaria, eliminando ruido corporativo.</p>
+                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light mb-2">Foco en lo esencial</h4>
+                  <p class="text-base sm:text-lg text-text-secondary-light leading-relaxed">Priorizamos las decisiones que realmente gobiernan la gestión diaria, eliminando ruido corporativo.</p>
                 </div>
               </div>
               <div class="flex gap-5 sm:gap-8 group">
                 <span class="text-gold font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">02.</span>
                 <div>
-                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light dark:text-text-primary-dark mb-2">Rigor de datos</h4>
-                  <p class="text-base sm:text-lg text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Ordenamos la información para que el instinto directivo se respalde con números inquebrantables.</p>
+                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light mb-2">Rigor de datos</h4>
+                  <p class="text-base sm:text-lg text-text-secondary-light leading-relaxed">Ordenamos la información para que el instinto directivo se respalde con números inquebrantables.</p>
                 </div>
               </div>
               <div class="flex gap-5 sm:gap-8 group">
                 <span class="text-gold font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">03.</span>
                 <div>
-                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light dark:text-text-primary-dark mb-2">Criterio profesional</h4>
-                  <p class="text-base sm:text-lg text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Aportamos experiencia aplicada real en el campo, no solo teoría de manual de consultoría.</p>
+                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light mb-2">Criterio profesional</h4>
+                  <p class="text-base sm:text-lg text-text-secondary-light leading-relaxed">Aportamos experiencia aplicada real en el campo, no solo teoría de manual de consultoría.</p>
                 </div>
               </div>
             </div>
@@ -461,7 +461,7 @@
     </section>
 
     <section class="py-24 sm:py-32 md:py-40 relative overflow-hidden" id="contacto">
-      <div class="absolute inset-0 bg-neutral-100/50 dark:bg-slate-900/10 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-neutral-100/50 pointer-events-none"></div>
       <div class="max-w-3xl mx-auto px-4 sm:px-8 relative z-10 opacity-0 animate-fade-in-up delay-100">
 
         <!-- Título -->
@@ -471,8 +471,8 @@
             <span>Contacto</span>
             <span class="w-8 h-[1px] bg-gold"></span>
           </h2>
-          <h3 class="text-3xl sm:text-5xl font-extrabold text-text-primary-light dark:text-text-primary-dark tracking-tight leading-tight">
-            Conversemos sobre <span class="text-primary-brand dark:text-gold opacity-80">su estrategia.</span>
+          <h3 class="text-3xl sm:text-5xl font-extrabold text-text-primary-light tracking-tight leading-tight">
+            Conversemos sobre <span class="text-primary-brand opacity-80">su estrategia.</span>
           </h3>
         </div>
 
@@ -483,12 +483,12 @@
           <div class="grid sm:grid-cols-2 gap-6">
             <!-- Nombre -->
             <div>
-              <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-2">Nombre *</label>
+              <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">Nombre *</label>
               <input
                 formControlName="nombre"
                 type="text"
                 placeholder="Juan García"
-                class="w-full bg-slate-50 dark:bg-neutral-800/60 border border-slate-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
+                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
               />
               @if (contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched) {
                 <p class="text-xs text-red-500 mt-1.5">El nombre es requerido.</p>
@@ -496,12 +496,12 @@
             </div>
             <!-- Email -->
             <div>
-              <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-2">Email *</label>
+              <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">Email *</label>
               <input
                 formControlName="email"
                 type="email"
                 placeholder="juan@empresa.com"
-                class="w-full bg-slate-50 dark:bg-neutral-800/60 border border-slate-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
+                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
               />
               @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
                 <p class="text-xs text-red-500 mt-1.5">Email inválido.</p>
@@ -511,23 +511,23 @@
 
           <!-- Teléfono -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-2">Teléfono <span class="normal-case font-normal text-neutral-400">(opcional)</span></label>
+            <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">Teléfono <span class="normal-case font-normal text-neutral-400">(opcional)</span></label>
             <input
               formControlName="telefono"
               type="tel"
               placeholder="+54 9 11 1234-5678"
-              class="w-full bg-slate-50 dark:bg-neutral-800/60 border border-slate-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
+              class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
             />
           </div>
 
           <!-- Mensaje -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-2">Mensaje *</label>
+            <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">Mensaje *</label>
             <textarea
               formControlName="mensaje"
               rows="5"
               placeholder="Contanos brevemente sobre su organización y qué necesitan mejorar..."
-              class="w-full bg-slate-900/40 dark:bg-neutral-800/60 border border-slate-800 dark:border-neutral-700 rounded-xl px-4 py-3 text-base text-white dark:text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300 resize-none"
+              class="w-full bg-slate-900/40 border border-slate-800 rounded-xl px-4 py-3 text-base text-white placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300 resize-none"
             ></textarea>
             @if (contactForm.get('mensaje')?.invalid && contactForm.get('mensaje')?.touched) {
               <p class="text-xs text-red-500 mt-1.5">El mensaje es requerido.</p>
@@ -536,22 +536,22 @@
 
           <!-- Estado / Submit -->
           @if (formStatus === 'success') {
-            <div class="flex items-center gap-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl px-5 py-4">
-              <span class="material-symbols-outlined text-green-600 dark:text-green-400">check_circle</span>
-              <p class="text-sm font-medium text-green-700 dark:text-green-400">Mensaje enviado. Le responderemos a la brevedad.</p>
+            <div class="flex items-center gap-3 bg-green-50 border border-green-200 rounded-xl px-5 py-4">
+              <span class="material-symbols-outlined text-green-600">check_circle</span>
+              <p class="text-sm font-medium text-green-700">Mensaje enviado. Le responderemos a la brevedad.</p>
             </div>
           }
           @if (formStatus === 'error') {
-            <div class="flex items-center gap-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl px-5 py-4">
-              <span class="material-symbols-outlined text-red-600 dark:text-red-400">error</span>
-              <p class="text-sm font-medium text-red-700 dark:text-red-400">No se pudo enviar el mensaje. Intente nuevamente.</p>
+            <div class="flex items-center gap-3 bg-red-50 border border-red-200 rounded-xl px-5 py-4">
+              <span class="material-symbols-outlined text-red-600">error</span>
+              <p class="text-sm font-medium text-red-700">No se pudo enviar el mensaje. Intente nuevamente.</p>
             </div>
           }
 
           <button
             type="submit"
             [disabled]="sending"
-            class="w-full relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:py-5 font-bold uppercase tracking-widest text-sm text-white bg-primary-brand rounded-full overflow-hidden group shadow-[0_10px_30px_rgba(0,44,85,0.25)] dark:shadow-[0_10px_30px_rgba(137,174,200,0.15)] transition-all duration-500 hover:-translate-y-1 disabled:opacity-60 disabled:pointer-events-none cursor-pointer">
+            class="w-full relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:py-5 font-bold uppercase tracking-widest text-sm text-white bg-primary-brand rounded-full overflow-hidden group shadow-[0_10px_30px_rgba(0,44,85,0.25)] transition-all duration-500 hover:-translate-y-1 disabled:opacity-60 disabled:pointer-events-none cursor-pointer">
             <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-brand to-accent-glow group-hover:opacity-100 opacity-0 transition-opacity duration-500"></span>
             @if (sending) {
               <span class="material-symbols-outlined animate-spin relative z-10">progress_activity</span>
@@ -561,23 +561,23 @@
             </span>
           </button>
 
-          <p class="text-center text-xs text-text-secondary-light dark:text-text-secondary-dark">O escríbanos directamente a <a href="mailto:consultas@arkhon.com.ar" class="text-primary-brand hover:underline font-medium">consultas@arkhon.com.ar</a></p>
+          <p class="text-center text-xs text-text-secondary-light">O escríbanos directamente a <a href="mailto:consultas@arkhon.com.ar" class="text-primary-brand hover:underline font-medium">consultas@arkhon.com.ar</a></p>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="py-10 sm:py-16 border-t border-border-light dark:border-neutral-800/50 relative z-10 bg-surface-light dark:bg-card-dark/40 backdrop-blur-md">
+  <footer class="py-10 sm:py-16 border-t border-border-light relative z-10 bg-surface-light backdrop-blur-md">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
         <div>
-          <img src="logo 2.png" class="h-10 w-auto max-w-[200px] object-contain object-left mix-blend-multiply dark:mix-blend-normal dark:invert dark:hue-rotate-180 mb-2" alt="ARKHON Logo">
-          <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-text-secondary-light dark:text-text-secondary-dark mt-2 sm:mt-3 font-medium">Asesoramiento Ejecutivo y Gestión</p>
+          <img src="logo 2.png" class="h-10 w-auto max-w-[200px] object-contain object-left mix-blend-multiply mb-2" alt="ARKHON Logo">
+          <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-text-secondary-light mt-2 sm:mt-3 font-medium">Asesoramiento Ejecutivo y Gestión</p>
         </div>
-        <div class="flex space-x-8 sm:space-x-12 text-xs font-bold uppercase tracking-widest text-text-secondary-light dark:text-text-secondary-dark">
-          <a class="hover:text-primary-brand dark:hover:text-gold transition-colors hover:-translate-y-1 transform duration-300" href="#">LinkedIn</a>
-          <a class="hover:text-primary-brand dark:hover:text-gold transition-colors hover:-translate-y-1 transform duration-300" href="#">Email</a>
-          <span class="text-text-secondary-light dark:text-text-secondary-dark">© 2026</span>
+        <div class="flex space-x-8 sm:space-x-12 text-xs font-bold uppercase tracking-widest text-text-secondary-light">
+          <a class="hover:text-primary-brand transition-colors hover:-translate-y-1 transform duration-300" href="#">LinkedIn</a>
+          <a class="hover:text-primary-brand transition-colors hover:-translate-y-1 transform duration-300" href="#">Email</a>
+          <span class="text-text-secondary-light">© 2026</span>
         </div>
       </div>
     </div>
