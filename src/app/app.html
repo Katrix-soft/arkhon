@@ -1,124 +1,175 @@
-<div class="min-h-screen selection:bg-accent selection:text-white bg-surface-light">
+<div style="background: #070d1a; min-height: 100vh;">
 
-  <!-- Floating Navbar -->
-  <div class="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6 md:px-8">
-    <nav class="max-w-screen-2xl mx-auto glass-nav rounded-2xl px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between transition-all duration-500">
-      <a href="#" class="flex items-center min-w-0 gap-3 group">
-        <!-- Isotipo sobre badge MARINE para contraste máximo -->
-        <div class="h-10 w-10 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg"
-             style="background-color: #002c55;">
+  <!-- ═══════════════════════════════════════ NAVBAR ═══ -->
+  <div class="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6">
+    <nav class="max-w-screen-2xl mx-auto glass-nav rounded-2xl px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="h-10 w-10 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(137,174,200,0.3)]"
+             style="background: linear-gradient(135deg, #002c55, #0a3d70);">
           <img src="isotipousar.png" class="h-7 w-7 sm:h-8 sm:w-8 object-contain"
-               style="filter: invert(1) brightness(2);"
-               alt="ARKHON Isotipo">
+               style="filter: invert(1) brightness(2);" alt="ARKHON">
         </div>
         <div class="flex flex-col leading-none">
           <span class="text-lg sm:text-xl font-extrabold tracking-[0.15em] uppercase text-white">ARKHON</span>
-          <span class="text-[9px] sm:text-[10px] font-medium tracking-[0.3em] uppercase" style="color: #B69A63;">CONSULTORA</span>
+          <span class="text-[9px] sm:text-[10px] font-medium tracking-[0.35em] uppercase" style="color: #B69A63;">CONSULTORA</span>
         </div>
       </a>
 
-      <div class="flex items-center gap-3 sm:gap-6 flex-shrink-0">
-        <div class="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] font-bold uppercase tracking-widest text-white/70">
-          <a class="hover:text-white transition-colors duration-300 relative group" href="#servicios">
+      <div class="flex items-center gap-3 sm:gap-8 flex-shrink-0">
+        <div class="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] font-bold uppercase tracking-widest text-white/50">
+          <a class="hover:text-white transition-all duration-300 relative group" href="#servicios">
             Servicios
-            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-white/60 transition-all duration-300 group-hover:w-full"></span>
+            <span class="absolute -bottom-1 left-0 w-0 h-px bg-white/40 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a class="hover:text-white transition-colors duration-300 relative group" href="#equipo">
+          <a class="hover:text-white transition-all duration-300 relative group" href="#equipo">
             Equipo
-            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-white/60 transition-all duration-300 group-hover:w-full"></span>
+            <span class="absolute -bottom-1 left-0 w-0 h-px bg-white/40 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a class="hover:text-white transition-colors duration-300 relative group" href="#enfoque">
+          <a class="hover:text-white transition-all duration-300 relative group" href="#enfoque">
             Enfoque
-            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-white/60 transition-all duration-300 group-hover:w-full"></span>
+            <span class="absolute -bottom-1 left-0 w-0 h-px bg-white/40 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a class="text-white hover:text-white/80 transition-colors duration-300 relative group" href="#contacto">
+          <a href="#contacto"
+             class="relative px-5 py-2.5 text-white font-bold text-[11px] tracking-widest uppercase rounded-full border transition-all duration-300 hover:bg-white/10 hover:border-white/30 group overflow-hidden"
+             style="border-color: rgba(182,154,99,0.5); color: #B69A63;">
             Contacto
-            <span class="absolute -bottom-2 left-0 w-full h-[2px]" style="background-color: #B69A63;"></span>
           </a>
         </div>
 
-        <div class="md:hidden flex items-center border-l border-white/20 pl-3 sm:pl-6 space-x-2">
+        <div class="md:hidden">
           <button
-            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-white/10 text-white/70 hover:text-white hover:bg-white/20 active:scale-95 transition-all duration-300 cursor-pointer"
-            (click)="toggleMobileMenu()"
-            aria-label="Menú móvil">
-            <span class="material-symbols-outlined text-xl sm:text-2xl">{{ isMobileMenuOpen ? 'close' : 'menu' }}</span>
+            class="w-9 h-9 rounded-full flex items-center justify-center bg-white/8 text-white/60 hover:text-white hover:bg-white/15 active:scale-95 transition-all duration-300 cursor-pointer"
+            (click)="toggleMobileMenu()" aria-label="Menú móvil">
+            <span class="material-symbols-outlined text-xl">{{ isMobileMenuOpen ? 'close' : 'menu' }}</span>
           </button>
         </div>
       </div>
     </nav>
 
-    <!-- Mobile Menu -->
     @if (isMobileMenuOpen) {
-      <div class="md:hidden mt-2 glass-nav rounded-2xl p-5 flex flex-col space-y-5 animate-fade-in-up" style="animation-duration:0.25s">
-        <a class="text-sm font-bold uppercase tracking-widest text-white/70 hover:text-white py-1" href="#servicios" (click)="toggleMobileMenu()">Servicios</a>
-        <a class="text-sm font-bold uppercase tracking-widest text-white/70 hover:text-white py-1" href="#equipo" (click)="toggleMobileMenu()">Equipo</a>
-        <a class="text-sm font-bold uppercase tracking-widest text-white/70 hover:text-white py-1" href="#enfoque" (click)="toggleMobileMenu()">Enfoque</a>
-        <a class="text-sm font-bold uppercase tracking-widest text-white hover:text-accent py-1" href="#contacto" (click)="toggleMobileMenu()">Contacto</a>
+      <div class="md:hidden mt-2 glass-nav rounded-2xl p-6 flex flex-col space-y-5 animate-fade-in-up" style="animation-duration:0.2s">
+        <a class="text-sm font-bold uppercase tracking-widest text-white/60 hover:text-white py-1 transition-colors" href="#servicios" (click)="toggleMobileMenu()">Servicios</a>
+        <a class="text-sm font-bold uppercase tracking-widest text-white/60 hover:text-white py-1 transition-colors" href="#equipo" (click)="toggleMobileMenu()">Equipo</a>
+        <a class="text-sm font-bold uppercase tracking-widest text-white/60 hover:text-white py-1 transition-colors" href="#enfoque" (click)="toggleMobileMenu()">Enfoque</a>
+        <a class="text-sm font-bold uppercase tracking-widest py-1 transition-colors" style="color: #B69A63;" href="#contacto" (click)="toggleMobileMenu()">Contacto</a>
       </div>
     }
   </div>
 
-  <!-- Hero -->
-  <header class="relative pt-28 sm:pt-36 md:pt-48 pb-20 sm:pb-28 md:pb-40 overflow-hidden flex items-center">
-    <!-- Glowing Orbs -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-[60%] -translate-y-1/2 w-[280px] sm:w-[500px] md:w-[700px] h-[280px] sm:h-[500px] md:h-[700px] bg-accent/20 rounded-full blur-[80px] sm:blur-[120px] md:blur-[140px] -z-10 pointer-events-none mix-blend-multiply transition-all duration-1000"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-[30%] -translate-y-[20%] w-[200px] sm:w-[400px] md:w-[600px] h-[200px] sm:h-[400px] md:h-[600px] bg-indigo-500/10 rounded-full blur-[60px] sm:blur-[100px] md:blur-[120px] -z-10 pointer-events-none mix-blend-multiply transition-all duration-1000"></div>
+  <!-- ═══════════════════════════════════════ HERO ══════ -->
+  <header class="relative min-h-screen flex items-center overflow-hidden" style="background: linear-gradient(160deg, #070d1a 0%, #0c1628 50%, #070d1a 100%);">
 
-    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 w-full z-10">
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        <div class="lg:col-span-7 max-w-5xl opacity-0 animate-fade-in-up">
-          <!-- Pill removed as requested -->
+    <!-- Dot grid -->
+    <div class="absolute inset-0 dot-grid opacity-50 pointer-events-none"></div>
 
-          <h1 class="text-[2.8rem] sm:text-6xl md:text-[6rem] lg:text-[7.5rem] font-extrabold tracking-ultra-tight leading-[0.95] mb-6 sm:mb-10 md:mb-12 text-gradient">
-            Hacer bien <br class="hidden sm:block"/>lo que importa.
+    <!-- Orbs -->
+    <div class="absolute top-1/4 left-1/3 w-[600px] h-[600px] rounded-full pointer-events-none animate-pulse-slow"
+         style="background: radial-gradient(circle, rgba(0,44,85,0.35) 0%, transparent 70%); filter: blur(60px);"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full pointer-events-none animate-pulse-slow"
+         style="background: radial-gradient(circle, rgba(123,103,39,0.2) 0%, transparent 70%); filter: blur(80px); animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
+         style="background: radial-gradient(circle, rgba(137,174,200,0.04) 0%, transparent 60%); filter: blur(40px);"></div>
+
+    <!-- Decorative lines -->
+    <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(137,174,200,0.15), transparent);"></div>
+
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 w-full pt-32 pb-24 sm:pt-40 sm:pb-32 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-0 items-center">
+
+        <div class="lg:col-span-8 opacity-0 animate-fade-in-up">
+          <!-- Label -->
+          <div class="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full" style="background: rgba(137,174,200,0.08); border: 1px solid rgba(137,174,200,0.15);">
+            <span class="w-1.5 h-1.5 rounded-full animate-pulse-slow" style="background: #B69A63;"></span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.25em]" style="color: #89aec8;">Consultoría Ejecutiva</span>
+          </div>
+
+          <h1 class="text-[3.2rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.5rem] font-extrabold tracking-[-0.04em] leading-[0.9] mb-8 sm:mb-10">
+            <span class="text-gradient">Hacer bien</span><br>
+            <span class="text-white opacity-90">lo que importa.</span>
           </h1>
-          <p class="text-lg sm:text-2xl md:text-3xl text-text-secondary-light font-light leading-snug max-w-3xl opacity-0 animate-fade-in-up delay-200">
+
+          <p class="text-lg sm:text-2xl md:text-2xl leading-relaxed max-w-2xl mb-12 sm:mb-16 opacity-0 animate-fade-in-up delay-200" style="color: rgba(232,238,245,0.55); font-weight: 300;">
             Gestión Administrativa, Económica y Financiera de alto nivel para organizaciones que exigen precisión, criterio y sostenibilidad.
           </p>
+
+          <div class="flex flex-wrap gap-4 opacity-0 animate-fade-in-up delay-300">
+            <a href="#contacto"
+               class="inline-flex items-center gap-3 px-7 py-4 rounded-full text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,44,85,0.5)]"
+               style="background: linear-gradient(135deg, #002c55, #0a3d70); border: 1px solid rgba(137,174,200,0.2);">
+              <span>Iniciar consulta</span>
+              <span class="material-symbols-outlined text-lg">arrow_forward</span>
+            </a>
+            <a href="#servicios"
+               class="inline-flex items-center gap-3 px-7 py-4 rounded-full text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:-translate-y-1"
+               style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: rgba(232,238,245,0.6);">
+              Ver servicios
+            </a>
+          </div>
         </div>
-        <!-- <div class="lg:col-span-5 flex justify-center items-center opacity-0 animate-fade-in-up delay-300">
-       
-          <div class="relative">
-            <div class="absolute -inset-4 bg-gradient-to-tr from-secondary/30 to-accent/20 rounded-[3.5rem] blur-2xl opacity-60"></div>
-            <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-[3rem] p-6 sm:p-8 overflow-hidden flex items-center justify-center shadow-[0_30px_80px_-10px_rgba(0,44,85,0.2)] border border-secondary/25"
-                 style="background: linear-gradient(135deg, #ffffff 60%, #f5f0e8 100%);">
-           
-              <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-accent/30 to-transparent rounded-bl-[3rem]"></div>
-              <div class="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-secondary/20 to-transparent rounded-tr-[2rem]"></div>
-              <img src="logo 2.png" class="w-full h-full object-contain relative z-10" alt="ARKHON Logo">
+
+        <!-- Stats column -->
+        <div class="lg:col-span-4 opacity-0 animate-fade-in-up delay-400">
+          <div class="grid grid-cols-2 lg:grid-cols-1 gap-4 lg:pl-12">
+            <div class="glass-card rounded-2xl p-6 lg:p-8 transition-all duration-500 hover:-translate-y-1 hover:border-white/20 group">
+              <div class="text-4xl lg:text-5xl font-extrabold text-white mb-1 tracking-tight">+10</div>
+              <div class="text-xs uppercase tracking-widest font-bold" style="color: #B69A63;">años de experiencia</div>
+              <div class="mt-3 h-px w-8" style="background: rgba(182,154,99,0.4);"></div>
+            </div>
+            <div class="glass-card rounded-2xl p-6 lg:p-8 transition-all duration-500 hover:-translate-y-1 hover:border-white/20 group">
+              <div class="text-4xl lg:text-5xl font-extrabold text-white mb-1 tracking-tight">30+</div>
+              <div class="text-xs uppercase tracking-widest font-bold" style="color: #89aec8;">organizaciones</div>
+              <div class="mt-3 h-px w-8" style="background: rgba(137,174,200,0.4);"></div>
+            </div>
+            <div class="glass-card rounded-2xl p-6 lg:p-8 transition-all duration-500 hover:-translate-y-1 hover:border-white/20 group col-span-2 lg:col-span-1">
+              <div class="text-4xl lg:text-5xl font-extrabold text-white mb-1 tracking-tight">3</div>
+              <div class="text-xs uppercase tracking-widest font-bold" style="color: rgba(232,238,245,0.4);">socios especializados</div>
+              <div class="mt-3 h-px w-8" style="background: rgba(255,255,255,0.15);"></div>
             </div>
           </div>
-        </div> -->
+        </div>
+
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
+        <span class="text-[10px] uppercase tracking-widest font-medium text-white">Scroll</span>
+        <div class="w-px h-12" style="background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);"></div>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Misión -->
-    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative" id="que-hacemos">
+
+    <!-- ══════════════════════════════════ MISIÓN ══════ -->
+    <section class="py-24 sm:py-32 md:py-40 relative overflow-hidden" id="que-hacemos"
+             style="background: #f0f6f7;">
+
+      <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(0,44,85,0.15), transparent);"></div>
+
       <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-24 opacity-0 animate-fade-in-up delay-200">
           <div class="lg:col-span-4">
             <div class="lg:sticky lg:top-40">
-              <h2 class="text-xs font-bold uppercase tracking-mega text-gold mb-4 sm:mb-6 flex items-center space-x-3">
-                <span class="w-8 h-[1px] bg-gold"></span>
+              <h2 class="text-xs font-bold uppercase tracking-[0.2em] mb-5 flex items-center space-x-3" style="color: #7b6727;">
+                <span class="w-8 h-px" style="background: #7b6727;"></span>
                 <span>La Misión</span>
               </h2>
-              <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 leading-tight">Ordenamos la toma de decisiones.</h3>
+              <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight" style="color: #0b0e29;">
+                Ordenamos la toma de decisiones.
+              </h3>
             </div>
           </div>
           <div class="lg:col-span-8 grid sm:grid-cols-2 gap-8 lg:gap-16 pt-2">
-            <div class="executive-border pl-6 sm:pl-8 md:pl-10 relative group">
-              <div class="absolute -left-[2px] top-0 w-[2px] h-0 bg-accent group-hover:h-full transition-all duration-700 ease-out"></div>
-              <p class="text-base sm:text-xl md:text-2xl text-neutral-600 font-light leading-relaxed">
-                En <span class="text-neutral-900 font-medium">ARKHON</span> acompañamos a la dirección y sus equipos de trabajo en la arquitectura de su gestión económica. Trabajamos sobre los fundamentos que gobiernan la organización.
+            <div class="pl-8 relative group" style="border-left: 2px solid rgba(0,44,85,0.12);">
+              <div class="absolute -left-px top-0 w-px h-0 transition-all duration-700 ease-out group-hover:h-full" style="background: #002c55;"></div>
+              <p class="text-lg sm:text-xl text-neutral-600 font-light leading-relaxed">
+                En <span class="font-semibold text-neutral-900">ARKHON</span> acompañamos a la dirección y sus equipos en la arquitectura de su gestión económica. Trabajamos sobre los fundamentos que gobiernan la organización.
               </p>
             </div>
-            <div class="executive-border pl-6 sm:pl-8 md:pl-10 relative group">
-              <div class="absolute -left-[2px] top-0 w-[2px] h-0 bg-accent group-hover:h-full transition-all duration-700 ease-out"></div>
-              <p class="text-base sm:text-xl md:text-2xl text-neutral-400 font-light leading-relaxed">
-                Nuestro enfoque es riguroso, analítico y centrado en la problemática de fondo para aportar previsibilidad.
+            <div class="pl-8 relative group" style="border-left: 2px solid rgba(0,44,85,0.12);">
+              <div class="absolute -left-px top-0 w-px h-0 transition-all duration-700 ease-out group-hover:h-full" style="background: #7b6727;"></div>
+              <p class="text-lg sm:text-xl text-neutral-400 font-light leading-relaxed">
+                Nuestro enfoque es riguroso, analítico y centrado en la problemática de fondo para aportar previsibilidad y sostenibilidad.
               </p>
             </div>
           </div>
@@ -126,221 +177,233 @@
       </div>
     </section>
 
-    <!-- Equipo -->
-    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative overflow-hidden" id="equipo">
+    <!-- ══════════════════════════════════ EQUIPO ══════ -->
+    <section class="py-24 sm:py-32 md:py-40 relative overflow-hidden" id="equipo"
+             style="background: linear-gradient(180deg, #0a1220 0%, #070d1a 100%);">
+
+      <!-- Subtle grid -->
+      <div class="absolute inset-0 dot-grid opacity-30 pointer-events-none"></div>
+
+      <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(137,174,200,0.1), transparent);"></div>
+
       <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
-        <div class="flex flex-col mb-12 sm:mb-16 md:mb-24 opacity-0 animate-fade-in-up">
-          <h2 class="text-xs font-bold uppercase tracking-mega text-gold mb-4 sm:mb-6 flex items-center space-x-3">
-            <span class="w-8 h-[1px] bg-gold"></span>
-            <span>Equipo / 03</span>
+        <div class="flex flex-col mb-16 sm:mb-20 opacity-0 animate-fade-in-up">
+          <h2 class="text-xs font-bold uppercase tracking-[0.2em] mb-5 flex items-center space-x-3" style="color: #B69A63;">
+            <span class="w-8 h-px" style="background: #B69A63;"></span>
+            <span>Equipo</span>
           </h2>
-          <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-neutral-900">Nuestro Equipo</h3>
+          <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-white">Nuestro Equipo</h3>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14 max-w-6xl mx-auto">
-          <!-- Perfil: Pablo -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+
+          <!-- Pablo -->
           <div class="group opacity-0 animate-fade-in-up delay-100">
-            <div class="glass-card rounded-[2.5rem] p-6 sm:p-7 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] border-transparent hover:border-accent/30 relative overflow-hidden">
-              <div class="absolute -top-10 -right-10 w-32 h-32 bg-indigo-500/5 rounded-full blur-3xl group-hover:bg-indigo-500/10 transition-all duration-700"></div>
-              
-              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40">
-                <div class="absolute inset-0 bg-gradient-to-tr from-primary/80 to-indigo-600/30 opacity-40"></div>
+            <div class="glass-card rounded-[2rem] p-6 sm:p-8 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_rgba(0,44,85,0.4)] hover:border-white/15 relative overflow-hidden">
+              <div class="absolute -top-16 -right-16 w-40 h-40 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(0,44,85,0.3), transparent); filter: blur(30px);"></div>
+
+              <div class="relative aspect-square rounded-[1.5rem] overflow-hidden mb-6 sm:mb-8" style="background: linear-gradient(135deg, #0c1628, #162040);">
+                <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(0,44,85,0.6), rgba(137,174,200,0.1));"></div>
                 <div class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-1000">
-                   <span class="material-symbols-outlined text-6xl text-indigo-400/40">person_4</span>
+                  <span class="material-symbols-outlined text-7xl" style="color: rgba(137,174,200,0.2);">person_4</span>
                 </div>
-                <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center backdrop-blur-md translate-y-4 group-hover:translate-y-0">
-                   <p class="text-white/90 text-[13px] leading-relaxed mb-5 font-light italic">"Acompañamos la toma de decisiones con análisis riguroso y visión de futuro."</p>
-                   <div class="flex gap-3">
-                     <a href="https://www.linkedin.com/in/pablomoya35/" target="_blank" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                     </a>
-                     <a href="#" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
-                        <span class="material-symbols-outlined text-lg">mail</span>
-                     </a>
-                   </div>
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center backdrop-blur-md" style="background: rgba(0,44,85,0.9); transform: translateY(8px); transition: opacity 0.4s, transform 0.4s;">
+                  <p class="text-white/80 text-[13px] leading-relaxed mb-5 font-light italic">"Acompañamos la toma de decisiones con análisis riguroso y visión de futuro."</p>
+                  <div class="flex gap-3">
+                    <a href="https://www.linkedin.com/in/pablomoya35/" target="_blank" class="w-9 h-9 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110" style="background: rgba(137,174,200,0.15); border: 1px solid rgba(137,174,200,0.2);">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110" style="background: rgba(137,174,200,0.15); border: 1px solid rgba(137,174,200,0.2);">
+                      <span class="material-symbols-outlined text-base">mail</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-              
-              <div class="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
-                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand mb-1 block">Socio Fundador</span>
-                <h4 class="text-2xl font-extrabold text-text-primary-light mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Pablo Moya</h4>
-                <p class="text-sm text-text-secondary-light font-medium">Asesor Estratégico</p>
+
+              <div class="relative z-10">
+                <span class="text-[10px] font-bold uppercase tracking-[0.2em] mb-1 block" style="color: #89aec8;">Socio Fundador</span>
+                <h4 class="text-2xl font-extrabold text-white mb-1 tracking-tight group-hover:text-gradient transition-all">Pablo Moya</h4>
+                <p class="text-sm font-medium" style="color: rgba(232,238,245,0.4);">Asesor Estratégico</p>
               </div>
             </div>
           </div>
 
-          <!-- Perfil: Victoria -->
+          <!-- Victoria -->
           <div class="group opacity-0 animate-fade-in-up delay-200">
-            <div class="glass-card rounded-[2.5rem] p-6 sm:p-7 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-20px_rgba(13, 148, 136, 0.25)] border-transparent hover:border-accent/30 relative overflow-hidden">
-              <div class="absolute -top-10 -right-10 w-32 h-32 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-all duration-700"></div>
-              
-              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40">
-                <div class="absolute inset-0 bg-gradient-to-tr from-primary to-accent/30 opacity-40"></div>
+            <div class="glass-card rounded-[2rem] p-6 sm:p-8 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_rgba(123,103,39,0.3)] hover:border-white/15 relative overflow-hidden">
+              <div class="absolute -top-16 -right-16 w-40 h-40 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(123,103,39,0.25), transparent); filter: blur(30px);"></div>
+
+              <div class="relative aspect-square rounded-[1.5rem] overflow-hidden mb-6 sm:mb-8" style="background: linear-gradient(135deg, #0c1628, #1a1508);">
+                <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(123,103,39,0.4), rgba(137,174,200,0.05));"></div>
                 <div class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-1000">
-                   <span class="material-symbols-outlined text-6xl text-accent/40">person_3</span>
+                  <span class="material-symbols-outlined text-7xl" style="color: rgba(182,154,99,0.2);">person_3</span>
                 </div>
-                <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center backdrop-blur-md translate-y-4 group-hover:translate-y-0">
-                   <p class="text-white/90 text-[13px] leading-relaxed mb-5 font-light italic">"Optimizamos la estructura para que la dirección pueda enfocarse en el crecimiento."</p>
-                   <div class="flex gap-3">
-                     <a href="https://www.linkedin.com/in/mariaviictoriagonzalez/" target="_blank" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                     </a>
-                     <a href="mailto:victoria@arkhon.com" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
-                        <span class="material-symbols-outlined text-lg">mail</span>
-                     </a>
-                   </div>
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center backdrop-blur-md" style="background: rgba(78,50,10,0.92);">
+                  <p class="text-white/80 text-[13px] leading-relaxed mb-5 font-light italic">"Optimizamos la estructura para que la dirección pueda enfocarse en el crecimiento."</p>
+                  <div class="flex gap-3">
+                    <a href="https://www.linkedin.com/in/mariaviictoriagonzalez/" target="_blank" class="w-9 h-9 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110" style="background: rgba(182,154,99,0.15); border: 1px solid rgba(182,154,99,0.3);">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="mailto:victoria@arkhon.com" class="w-9 h-9 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110" style="background: rgba(182,154,99,0.15); border: 1px solid rgba(182,154,99,0.3);">
+                      <span class="material-symbols-outlined text-base">mail</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-              
-              <div class="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
-                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand mb-1 block">Gestión & Procesos</span>
-                <h4 class="text-2xl font-extrabold text-text-primary-light mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Victoria Gonzalez</h4>
-                <p class="text-sm text-text-secondary-light font-medium">Especialista en Procesos</p>
+
+              <div class="relative z-10">
+                <span class="text-[10px] font-bold uppercase tracking-[0.2em] mb-1 block" style="color: #B69A63;">Gestión &amp; Procesos</span>
+                <h4 class="text-2xl font-extrabold text-white mb-1 tracking-tight">Victoria Gonzalez</h4>
+                <p class="text-sm font-medium" style="color: rgba(232,238,245,0.4);">Especialista en Procesos</p>
               </div>
             </div>
           </div>
 
-          <!-- Perfil: Ignacio -->
+          <!-- Ignacio -->
           <div class="group opacity-0 animate-fade-in-up delay-300">
-            <div class="glass-card rounded-[2.5rem] p-6 sm:p-7 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-20px_rgba(13, 148, 136, 0.25)] border-transparent hover:border-accent/30 relative overflow-hidden">
-              <div class="absolute -top-10 -right-10 w-32 h-32 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-all duration-700"></div>
-              
-              <div class="relative aspect-square rounded-[1.8rem] overflow-hidden mb-6 sm:mb-8 bg-slate-800/40">
-                <div class="absolute inset-0 bg-gradient-to-tr from-accent/40 to-indigo-900 opacity-40"></div>
+            <div class="glass-card rounded-[2rem] p-6 sm:p-8 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_rgba(137,174,200,0.2)] hover:border-white/15 relative overflow-hidden">
+              <div class="absolute -top-16 -right-16 w-40 h-40 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(137,174,200,0.2), transparent); filter: blur(30px);"></div>
+
+              <div class="relative aspect-square rounded-[1.5rem] overflow-hidden mb-6 sm:mb-8" style="background: linear-gradient(135deg, #0c1628, #081220);">
+                <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(137,174,200,0.2), rgba(0,44,85,0.3));"></div>
                 <div class="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-1000">
-                   <span class="material-symbols-outlined text-6xl text-accent/40">smart_toy</span>
+                  <span class="material-symbols-outlined text-7xl" style="color: rgba(137,174,200,0.2);">smart_toy</span>
                 </div>
-                <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center backdrop-blur-md translate-y-4 group-hover:translate-y-0">
-                   <p class="text-white/90 text-[13px] leading-relaxed mb-5 font-light italic">"Integramos inteligencia artificial para optimizar cada proceso de la organización."</p>
-                   <div class="flex gap-3">
-                     <a href="https://www.linkedin.com/in/ignacio-e-sanchez/" target="_blank" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                     </a>
-                     <a href="#" class="w-10 h-10 rounded-full bg-slate-900/40/10 hover:bg-accent flex items-center justify-center text-white transition-all duration-300">
-                        <span class="material-symbols-outlined text-lg">mail</span>
-                     </a>
-                   </div>
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center backdrop-blur-md" style="background: rgba(8,18,32,0.92);">
+                  <p class="text-white/80 text-[13px] leading-relaxed mb-5 font-light italic">"Integramos inteligencia artificial para optimizar cada proceso de la organización."</p>
+                  <div class="flex gap-3">
+                    <a href="https://www.linkedin.com/in/ignacio-e-sanchez/" target="_blank" class="w-9 h-9 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110" style="background: rgba(137,174,200,0.15); border: 1px solid rgba(137,174,200,0.2);">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110" style="background: rgba(137,174,200,0.15); border: 1px solid rgba(137,174,200,0.2);">
+                      <span class="material-symbols-outlined text-base">mail</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-              
-              <div class="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
-                <span class="text-[10px] font-bold uppercase tracking-mega text-primary-brand mb-1 block">Estrategia & IA</span>
-                <h4 class="text-2xl font-extrabold text-text-primary-light mb-1.5 tracking-tight transition-colors group-hover:text-primary-brand">Ignacio Sanchez</h4>
-                <p class="text-sm text-text-secondary-light font-medium">Socio Tecnológico</p>
+
+              <div class="relative z-10">
+                <span class="text-[10px] font-bold uppercase tracking-[0.2em] mb-1 block" style="color: #89aec8;">Estrategia &amp; IA</span>
+                <h4 class="text-2xl font-extrabold text-white mb-1 tracking-tight">Ignacio Sanchez</h4>
+                <p class="text-sm font-medium" style="color: rgba(232,238,245,0.4);">Socio Tecnológico</p>
               </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
 
-    <!-- Servicios -->
-    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative overflow-hidden" id="servicios">
-      <div class="absolute inset-0 bg-slate-50 border-y border-border-light -z-10"></div>
+    <!-- ═════════════════════════════════ SERVICIOS ════ -->
+    <section class="py-24 sm:py-32 md:py-40 relative overflow-hidden" id="servicios"
+             style="background: #f0f6f7;">
+
+      <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(0,44,85,0.15), transparent);"></div>
+
+      <!-- Decorative large text background -->
+      <div class="absolute -right-8 top-1/2 -translate-y-1/2 text-[18rem] font-extrabold tracking-tighter select-none pointer-events-none" style="color: rgba(0,44,85,0.03); line-height:1;">SRV</div>
+
       <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
-        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-12 sm:mb-16 md:mb-24 opacity-0 animate-fade-in-up delay-100 gap-4">
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-16 sm:mb-20 opacity-0 animate-fade-in-up delay-100 gap-4">
           <div>
-            <h2 class="text-xs font-bold uppercase tracking-mega text-gold mb-4 sm:mb-6 flex items-center space-x-3">
-              <span class="w-8 h-[1px] bg-gold"></span>
-              <span>Capacidades / 04</span>
+            <h2 class="text-xs font-bold uppercase tracking-[0.2em] mb-5 flex items-center space-x-3" style="color: #7b6727;">
+              <span class="w-8 h-px" style="background: #7b6727;"></span>
+              <span>Capacidades</span>
             </h2>
-            <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-neutral-900">Servicios</h3>
+            <h3 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight" style="color: #0b0e29;">Servicios</h3>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+
           <!-- Card 1 -->
-          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 group opacity-0 animate-fade-in-up delay-100 relative overflow-hidden border border-transparent hover:border-secondary/30">
-            <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl transition-all duration-500" style="background: rgba(0,44,85,0.06);"></div>
-            <!-- Ícono: fondo MARINE, ícono blanco -->
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10 shadow-lg"
-                 style="background-color: #002c55;">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-white">query_stats</span>
+          <div class="glass-card-light p-8 sm:p-10 rounded-[1.75rem] group opacity-0 animate-fade-in-up delay-100 relative overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_30px_60px_rgba(0,44,85,0.15)]" style="border: 1px solid rgba(0,44,85,0.07);">
+            <div class="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background: radial-gradient(circle, rgba(0,44,85,0.06), transparent);"></div>
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg"
+                 style="background: linear-gradient(135deg, #002c55, #0a3d70);">
+              <span class="material-symbols-outlined text-3xl text-white">query_stats</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light">Diagnóstico de gestión</h3>
-            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light">Análisis profundo de la estructura organizacional para identificar riesgos y áreas críticas de mejora.</p>
+            <div class="w-8 h-px mb-5" style="background: rgba(0,44,85,0.15);"></div>
+            <h3 class="text-xl font-bold mb-3" style="color: #0b0e29;">Diagnóstico de gestión</h3>
+            <p class="text-sm leading-relaxed" style="color: #5a6a82;">Análisis profundo de la estructura organizacional para identificar riesgos y áreas críticas de mejora.</p>
           </div>
 
           <!-- Card 2 -->
-          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 group opacity-0 animate-fade-in-up delay-200 relative overflow-hidden border border-transparent hover:border-secondary/30">
-            <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl transition-all duration-500" style="background: rgba(123,103,39,0.06);"></div>
-            <!-- Ícono: fondo BRASS, ícono blanco -->
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10 shadow-lg"
-                 style="background-color: #7b6727;">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-white">account_balance_wallet</span>
+          <div class="glass-card-light p-8 sm:p-10 rounded-[1.75rem] group opacity-0 animate-fade-in-up delay-200 relative overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_30px_60px_rgba(123,103,39,0.12)]" style="border: 1px solid rgba(0,44,85,0.07);">
+            <div class="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background: radial-gradient(circle, rgba(123,103,39,0.06), transparent);"></div>
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg"
+                 style="background: linear-gradient(135deg, #7b6727, #a08730);">
+              <span class="material-symbols-outlined text-3xl text-white">account_balance_wallet</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light">Acompañamiento ejecutivo</h3>
-            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light">Soporte continuo a directivos en la revisión periódica de las decisiones y optimización de procesos.</p>
+            <div class="w-8 h-px mb-5" style="background: rgba(123,103,39,0.2);"></div>
+            <h3 class="text-xl font-bold mb-3" style="color: #0b0e29;">Acompañamiento ejecutivo</h3>
+            <p class="text-sm leading-relaxed" style="color: #5a6a82;">Soporte continuo a directivos en la revisión periódica de las decisiones y optimización de procesos.</p>
           </div>
 
           <!-- Card 3 -->
-          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 group opacity-0 animate-fade-in-up delay-300 relative overflow-hidden border border-transparent hover:border-secondary/30">
-            <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl transition-all duration-500" style="background: rgba(78,69,42,0.06);"></div>
-            <!-- Ícono: fondo TIMBER, ícono blanco -->
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10 shadow-lg"
-                 style="background-color: #4e452a;">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-white">architecture</span>
+          <div class="glass-card-light p-8 sm:p-10 rounded-[1.75rem] group opacity-0 animate-fade-in-up delay-300 relative overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_30px_60px_rgba(78,69,42,0.1)]" style="border: 1px solid rgba(0,44,85,0.07);">
+            <div class="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background: radial-gradient(circle, rgba(78,69,42,0.06), transparent);"></div>
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg"
+                 style="background: linear-gradient(135deg, #4e452a, #6e6038);">
+              <span class="material-symbols-outlined text-3xl text-white">architecture</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light">Planificación estratégica</h3>
-            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light">Apoyar a las empresas en el desarrollo de sus procesos negocios y en la planificación.</p>
+            <div class="w-8 h-px mb-5" style="background: rgba(78,69,42,0.2);"></div>
+            <h3 class="text-xl font-bold mb-3" style="color: #0b0e29;">Planificación estratégica</h3>
+            <p class="text-sm leading-relaxed" style="color: #5a6a82;">Apoyamos a las empresas en el desarrollo de sus procesos de negocio y en la planificación integral.</p>
           </div>
 
           <!-- Card 4 -->
-          <div class="glass-card p-7 sm:p-10 md:p-12 rounded-[1.5rem] sm:rounded-[2rem] hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 group opacity-0 animate-fade-in-up delay-400 relative overflow-hidden border border-transparent hover:border-secondary/30">
-            <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl transition-all duration-500" style="background: rgba(137,174,200,0.08);"></div>
-            <!-- Ícono: fondo SLATE, ícono MARINE -->
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-6 sm:mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10 shadow-lg"
-                 style="background-color: #89aec8;">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl" style="color: #002c55;">analytics</span>
+          <div class="glass-card-light p-8 sm:p-10 rounded-[1.75rem] group opacity-0 animate-fade-in-up delay-400 relative overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_30px_60px_rgba(137,174,200,0.15)]" style="border: 1px solid rgba(0,44,85,0.07);">
+            <div class="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background: radial-gradient(circle, rgba(137,174,200,0.08), transparent);"></div>
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg"
+                 style="background: linear-gradient(135deg, #89aec8, #5d8fad);">
+              <span class="material-symbols-outlined text-3xl" style="color: #002c55;">analytics</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-5 relative z-10 text-text-primary-light">Control de Gestión</h3>
-            <p class="text-sm sm:text-base leading-relaxed relative z-10 text-text-secondary-light">Optimización de procesos operativos y financieros para asegurar la eficiencia del modelo de negocio.</p>
+            <div class="w-8 h-px mb-5" style="background: rgba(137,174,200,0.3);"></div>
+            <h3 class="text-xl font-bold mb-3" style="color: #0b0e29;">Control de Gestión</h3>
+            <p class="text-sm leading-relaxed" style="color: #5a6a82;">Optimización de procesos operativos y financieros para asegurar la eficiencia del modelo de negocio.</p>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Empresas con las que colaboramos -->
-    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative overflow-hidden" id="colaboraciones">
-      <div class="absolute inset-0 bg-slate-50 border-y border-border-light -z-10"></div>
-      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+    <!-- ════════════════════════════ COLABORACIONES ═══ -->
+    <section class="py-24 sm:py-32 md:py-40 relative overflow-hidden" id="colaboraciones"
+             style="background: linear-gradient(180deg, #070d1a, #0c1628);">
+
+      <div class="absolute inset-0 dot-grid opacity-20 pointer-events-none"></div>
+      <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(137,174,200,0.1), transparent);"></div>
+
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
 
-          <!-- Columna izquierda: título -->
           <div class="lg:col-span-4 opacity-0 animate-fade-in-up">
             <div class="lg:sticky lg:top-40">
-              <h2 class="text-xs font-bold uppercase tracking-mega mb-4 sm:mb-6 flex items-center space-x-3" style="color: #7b6727;">
-                <span class="w-8 h-[1px] inline-block" style="background-color: #7b6727;"></span>
+              <h2 class="text-xs font-bold uppercase tracking-[0.2em] mb-5 flex items-center space-x-3" style="color: #B69A63;">
+                <span class="w-8 h-px" style="background: #B69A63;"></span>
                 <span>Confianza</span>
               </h2>
-              <h3 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-text-primary-light">
-                Empresas que <span class="text-gold">confían</span> en nosotros
+              <h3 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-white">
+                Empresas que <span class="text-gradient-gold">confían</span> en nosotros
               </h3>
-              <p class="text-base sm:text-lg leading-relaxed text-text-secondary-light">
+              <p class="text-base sm:text-lg leading-relaxed" style="color: rgba(232,238,245,0.45);">
                 Organizaciones que eligieron a ARKHON para acompañar sus procesos de gestión y toma de decisiones.
               </p>
-              <div class="w-12 h-[2px] mt-8 bg-gold"></div>
+              <div class="w-12 h-px mt-8" style="background: rgba(182,154,99,0.4);"></div>
             </div>
           </div>
 
-          <!-- Columna derecha: logos -->
           <div class="lg:col-span-8 opacity-0 animate-fade-in-up delay-200">
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 w-full">
-              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
-                <img src="igm.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-500" alt="IGM">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
+              <a href="#" class="group flex items-center justify-center p-8 sm:p-10 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); min-height: 140px;">
+                <img src="igm.png" class="h-14 sm:h-16 w-auto object-contain grayscale invert group-hover:grayscale-0 group-hover:invert-0 opacity-50 group-hover:opacity-90 transition-all duration-500" alt="IGM">
               </a>
-              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
-                <img src="franchi.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-500" alt="Franchi">
+              <a href="#" class="group flex items-center justify-center p-8 sm:p-10 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); min-height: 140px;">
+                <img src="franchi.png" class="h-14 sm:h-16 w-auto object-contain grayscale invert group-hover:grayscale-0 group-hover:invert-0 opacity-50 group-hover:opacity-90 transition-all duration-500" alt="Franchi">
               </a>
-              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
-                <img src="peralta.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-500" alt="Peralta">
+              <a href="#" class="group flex items-center justify-center p-8 sm:p-10 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); min-height: 140px;">
+                <img src="peralta.png" class="h-14 sm:h-16 w-auto object-contain grayscale invert group-hover:grayscale-0 group-hover:invert-0 opacity-50 group-hover:opacity-90 transition-all duration-500" alt="Peralta">
               </a>
             </div>
           </div>
@@ -349,39 +412,42 @@
       </div>
     </section>
 
-    <!-- Socios Estratégicos -->
-    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative overflow-hidden" id="socios">
-      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+    <!-- ═══════════════════════════════ SOCIOS ══════════ -->
+    <section class="py-24 sm:py-32 md:py-40 relative overflow-hidden" id="socios"
+             style="background: #f0f6f7;">
+
+      <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(0,44,85,0.15), transparent);"></div>
+      <div class="absolute -left-8 top-1/2 -translate-y-1/2 text-[18rem] font-extrabold tracking-tighter select-none pointer-events-none" style="color: rgba(0,44,85,0.03); line-height:1;">SC</div>
+
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
 
-          <!-- Columna izquierda: título -->
           <div class="lg:col-span-4 opacity-0 animate-fade-in-up">
             <div class="lg:sticky lg:top-40">
-              <h2 class="text-xs font-bold uppercase tracking-mega mb-4 sm:mb-6 flex items-center space-x-3 text-accent">
-                <span class="w-8 h-[1px] inline-block bg-accent"></span>
+              <h2 class="text-xs font-bold uppercase tracking-[0.2em] mb-5 flex items-center space-x-3" style="color: #89aec8;">
+                <span class="w-8 h-px" style="background: #89aec8;"></span>
                 <span>Red estratégica</span>
               </h2>
-              <h3 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-text-primary-light">
-                Socios <span class="text-primary-brand">estratégicos</span>
+              <h3 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6" style="color: #0b0e29;">
+                Socios <span style="color: #002c55;">estratégicos</span>
               </h3>
-              <p class="text-base sm:text-lg leading-relaxed text-text-secondary-light">
+              <p class="text-base sm:text-lg leading-relaxed" style="color: #5a6a82;">
                 Trabajamos junto a organizaciones de referencia para brindar soluciones integrales y de alto impacto.
               </p>
-              <div class="w-12 h-[2px] mt-8 bg-primary-brand"></div>
+              <div class="w-12 h-px mt-8" style="background: rgba(0,44,85,0.3);"></div>
             </div>
           </div>
 
-          <!-- Columna derecha: logos -->
           <div class="lg:col-span-8 opacity-0 animate-fade-in-up delay-200">
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 w-full">
-              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
-                <img src="katrix.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain opacity-75 group-hover:opacity-100 transition-all duration-500" alt="Katrix">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
+              <a href="#" class="group flex items-center justify-center p-8 sm:p-10 rounded-2xl bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,44,85,0.12)]" style="border: 1px solid rgba(0,44,85,0.08); min-height: 140px;">
+                <img src="katrix.png" class="h-14 sm:h-16 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500" alt="Katrix">
               </a>
-              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
-                <img src="tero.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain opacity-75 group-hover:opacity-100 transition-all duration-500" alt="Tero">
+              <a href="#" class="group flex items-center justify-center p-8 sm:p-10 rounded-2xl bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,44,85,0.12)]" style="border: 1px solid rgba(0,44,85,0.08); min-height: 140px;">
+                <img src="tero.png" class="h-14 sm:h-16 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500" alt="Tero">
               </a>
-              <a href="#" class="group flex items-center justify-center p-6 sm:p-10 rounded-2xl border bg-white border-border-light transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-full" style="min-height: 140px;">
-                <img src="alue.png" class="h-16 sm:h-20 md:h-24 w-auto object-contain opacity-75 group-hover:opacity-100 transition-all duration-500" alt="Alue">
+              <a href="#" class="group flex items-center justify-center p-8 sm:p-10 rounded-2xl bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,44,85,0.12)]" style="border: 1px solid rgba(0,44,85,0.08); min-height: 140px;">
+                <img src="alue.png" class="h-14 sm:h-16 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500" alt="Alue">
               </a>
             </div>
           </div>
@@ -390,69 +456,95 @@
       </div>
     </section>
 
-    <!-- Enfoque -->
+    <!-- ══════════════════════════════════ ENFOQUE ════ -->
+    <section class="py-24 sm:py-32 md:py-40 relative overflow-hidden" id="enfoque"
+             style="background: linear-gradient(180deg, #0c1628 0%, #070d1a 100%);">
 
-    <section class="py-16 sm:py-24 md:py-32 lg:py-48 relative" id="enfoque">
-      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
-        <div class="grid lg:grid-cols-2 gap-14 lg:gap-32 items-center">
+      <div class="absolute inset-0 dot-grid opacity-25 pointer-events-none"></div>
+      <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(137,174,200,0.1), transparent);"></div>
+
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-14 lg:gap-24 items-center">
 
           <div class="opacity-0 animate-fade-in-up delay-100">
-            <h2 class="text-xs font-bold uppercase tracking-mega text-gold mb-4 sm:mb-6 flex items-center space-x-3">
-              <span class="w-8 h-[1px] bg-gold"></span>
+            <h2 class="text-xs font-bold uppercase tracking-[0.2em] mb-5 flex items-center space-x-3" style="color: #B69A63;">
+              <span class="w-8 h-px" style="background: #B69A63;"></span>
               <span>Visión</span>
             </h2>
-            <h3 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight mb-10 sm:mb-16 text-neutral-900 leading-tight">Nuestro enfoque</h3>
+            <h3 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight mb-12 text-white leading-tight">Nuestro enfoque</h3>
 
-            <div class="space-y-8 sm:space-y-12">
-              <div class="flex gap-5 sm:gap-8 group">
-                <span class="text-gold font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">01.</span>
+            <div class="space-y-10">
+              <div class="flex gap-6 group">
+                <span class="font-bold text-lg tracking-tighter flex-shrink-0 mt-1 transition-opacity" style="color: rgba(182,154,99,0.5);">01.</span>
                 <div>
-                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light mb-2">Foco en lo esencial</h4>
-                  <p class="text-base sm:text-lg text-text-secondary-light leading-relaxed">Priorizamos las decisiones que realmente gobiernan la gestión diaria, eliminando ruido corporativo.</p>
+                  <h4 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-gradient-gold transition-all">Foco en lo esencial</h4>
+                  <p class="text-base sm:text-lg leading-relaxed" style="color: rgba(232,238,245,0.45);">Priorizamos las decisiones que realmente gobiernan la gestión diaria, eliminando ruido corporativo.</p>
                 </div>
               </div>
-              <div class="flex gap-5 sm:gap-8 group">
-                <span class="text-gold font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">02.</span>
+              <div class="h-px" style="background: rgba(137,174,200,0.07);"></div>
+              <div class="flex gap-6 group">
+                <span class="font-bold text-lg tracking-tighter flex-shrink-0 mt-1 transition-opacity" style="color: rgba(182,154,99,0.5);">02.</span>
                 <div>
-                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light mb-2">Rigor de datos</h4>
-                  <p class="text-base sm:text-lg text-text-secondary-light leading-relaxed">Ordenamos la información para que el instinto directivo se respalde con números inquebrantables.</p>
+                  <h4 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-gradient-gold transition-all">Rigor de datos</h4>
+                  <p class="text-base sm:text-lg leading-relaxed" style="color: rgba(232,238,245,0.45);">Ordenamos la información para que el instinto directivo se respalde con números inquebrantables.</p>
                 </div>
               </div>
-              <div class="flex gap-5 sm:gap-8 group">
-                <span class="text-gold font-bold text-base sm:text-xl tracking-tighter opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">03.</span>
+              <div class="h-px" style="background: rgba(137,174,200,0.07);"></div>
+              <div class="flex gap-6 group">
+                <span class="font-bold text-lg tracking-tighter flex-shrink-0 mt-1 transition-opacity" style="color: rgba(182,154,99,0.5);">03.</span>
                 <div>
-                  <h4 class="text-lg sm:text-xl font-bold text-text-primary-light mb-2">Criterio profesional</h4>
-                  <p class="text-base sm:text-lg text-text-secondary-light leading-relaxed">Aportamos experiencia aplicada real en el campo, no solo teoría de manual de consultoría.</p>
+                  <h4 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-gradient-gold transition-all">Criterio profesional</h4>
+                  <p class="text-base sm:text-lg leading-relaxed" style="color: rgba(232,238,245,0.45);">Aportamos experiencia aplicada real en el campo, no solo teoría de manual de consultoría.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Card Oscura (Call to Action/Validation) -->
+          <!-- Card oscura CTA -->
           <div class="relative opacity-0 animate-fade-in-up delay-300">
-            <div class="absolute -inset-1 bg-gradient-to-tr from-primary-brand to-gold/30 rounded-[2rem] sm:rounded-[2.5rem] blur-lg opacity-20"></div>
-            <div class="relative bg-primary-brand p-8 sm:p-12 md:p-16 rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden">
-              <div class="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[80px] rounded-full pointer-events-none"></div>
-              <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2 relative z-10">¿Cuándo somos la opción correcta?</h3>
-              <p class="text-sm sm:text-base text-blue-100/70 mb-8 sm:mb-10 relative z-10 font-medium italic">Cuando las empresas se encuentran en alguna de estas situaciones:</p>
-              <ul class="space-y-5 sm:space-y-8 relative z-10">
-                <li class="flex items-start space-x-4 sm:space-x-5 group">
-                  <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-gold shadow-[0_0_15px_rgba(197,160,89,0.6)] flex-shrink-0"></span>
-                  <span class="text-base sm:text-lg text-white font-medium group-hover:text-gold transition-colors">Crecimiento con sensación de desorden administrativo.</span>
-                </li>
-                <li class="flex items-start space-x-4 sm:space-x-5 group">
-                  <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-gold shadow-[0_0_15px_rgba(197,160,89,0.6)] flex-shrink-0"></span>
-                  <span class="text-base sm:text-lg text-white font-medium group-hover:text-gold transition-colors">Necesidad de mayor claridad estratégica para decidir.</span>
-                </li>
-                <li class="flex items-start space-x-4 sm:space-x-5 group">
-                  <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-gold shadow-[0_0_15px_rgba(197,160,89,0.6)] flex-shrink-0"></span>
-                  <span class="text-base sm:text-lg text-white font-medium group-hover:text-gold transition-colors">Búsqueda de profesionalización sin ahogarse en burocracia.</span>
-                </li>
-                <li class="flex items-start space-x-4 sm:space-x-5 group">
-                  <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-gold shadow-[0_0_15px_rgba(197,160,89,0.6)] flex-shrink-0"></span>
-                  <span class="text-base sm:text-lg text-white font-medium group-hover:text-gold transition-colors">Organizaciones exigentes que valoran el trabajo bien hecho.</span>
-                </li>
-              </ul>
+            <div class="absolute -inset-1 rounded-[2rem] blur-xl opacity-30" style="background: linear-gradient(135deg, rgba(0,44,85,0.8), rgba(182,154,99,0.3));"></div>
+            <div class="relative p-8 sm:p-12 md:p-14 rounded-[2rem] overflow-hidden" style="background: linear-gradient(135deg, #0c1e38, #081220); border: 1px solid rgba(137,174,200,0.12);">
+
+              <!-- Glow top right -->
+              <div class="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(182,154,99,0.12), transparent); filter: blur(40px);"></div>
+              <!-- Grid pattern -->
+              <div class="absolute inset-0 dot-grid opacity-20 pointer-events-none"></div>
+
+              <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full" style="background: rgba(182,154,99,0.1); border: 1px solid rgba(182,154,99,0.2);">
+                  <span class="w-1.5 h-1.5 rounded-full" style="background: #B69A63;"></span>
+                  <span class="text-[10px] font-bold uppercase tracking-[0.2em]" style="color: #B69A63;">Ideal para</span>
+                </div>
+
+                <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2">¿Cuándo somos<br>la opción correcta?</h3>
+                <p class="text-sm mb-8 font-light italic" style="color: rgba(232,238,245,0.4);">Cuando las empresas se encuentran en alguna de estas situaciones:</p>
+
+                <ul class="space-y-5">
+                  <li class="flex items-start space-x-4 group">
+                    <span class="mt-2 w-2 h-2 rounded-full flex-shrink-0 glow-gold" style="background: #B69A63;"></span>
+                    <span class="text-base text-white/80 font-medium group-hover:text-white transition-colors leading-relaxed">Crecimiento con sensación de desorden administrativo.</span>
+                  </li>
+                  <li class="flex items-start space-x-4 group">
+                    <span class="mt-2 w-2 h-2 rounded-full flex-shrink-0" style="background: #B69A63;"></span>
+                    <span class="text-base text-white/80 font-medium group-hover:text-white transition-colors leading-relaxed">Necesidad de mayor claridad estratégica para decidir.</span>
+                  </li>
+                  <li class="flex items-start space-x-4 group">
+                    <span class="mt-2 w-2 h-2 rounded-full flex-shrink-0" style="background: #B69A63;"></span>
+                    <span class="text-base text-white/80 font-medium group-hover:text-white transition-colors leading-relaxed">Búsqueda de profesionalización sin ahogarse en burocracia.</span>
+                  </li>
+                  <li class="flex items-start space-x-4 group">
+                    <span class="mt-2 w-2 h-2 rounded-full flex-shrink-0" style="background: #B69A63;"></span>
+                    <span class="text-base text-white/80 font-medium group-hover:text-white transition-colors leading-relaxed">Organizaciones exigentes que valoran el trabajo bien hecho.</span>
+                  </li>
+                </ul>
+
+                <div class="mt-10 pt-8" style="border-top: 1px solid rgba(137,174,200,0.08);">
+                  <a href="#contacto" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:gap-4 group" style="color: #B69A63;">
+                    <span>Conversemos</span>
+                    <span class="material-symbols-outlined text-lg transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -460,127 +552,221 @@
       </div>
     </section>
 
-    <section class="py-24 sm:py-32 md:py-40 relative overflow-hidden" id="contacto">
-      <div class="absolute inset-0 bg-neutral-100/50 pointer-events-none"></div>
-      <div class="max-w-3xl mx-auto px-4 sm:px-8 relative z-10 opacity-0 animate-fade-in-up delay-100">
+    <!-- ══════════════════════════════════ CONTACTO ════ -->
+    <section class="py-24 sm:py-32 md:py-40 relative overflow-hidden" id="contacto"
+             style="background: #f0f6f7;">
 
-        <!-- Título -->
+      <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(0,44,85,0.15), transparent);"></div>
+
+      <!-- Decorative orb -->
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(0,44,85,0.05), transparent); filter: blur(60px);"></div>
+
+      <div class="max-w-2xl mx-auto px-4 sm:px-8 relative z-10 opacity-0 animate-fade-in-up delay-100">
+
         <div class="text-center mb-12 sm:mb-16">
-          <h2 class="text-xs font-bold uppercase tracking-mega text-gold mb-4 sm:mb-6 flex items-center justify-center space-x-3">
-            <span class="w-8 h-[1px] bg-gold"></span>
+          <h2 class="text-xs font-bold uppercase tracking-[0.2em] mb-5 flex items-center justify-center space-x-3" style="color: #7b6727;">
+            <span class="w-8 h-px" style="background: #7b6727;"></span>
             <span>Contacto</span>
-            <span class="w-8 h-[1px] bg-gold"></span>
+            <span class="w-8 h-px" style="background: #7b6727;"></span>
           </h2>
-          <h3 class="text-3xl sm:text-5xl font-extrabold text-text-primary-light tracking-tight leading-tight">
-            Conversemos sobre <span class="text-primary-brand opacity-80">su estrategia.</span>
+          <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight" style="color: #0b0e29;">
+            Conversemos sobre <span style="color: #002c55;">su estrategia.</span>
           </h3>
+          <p class="text-base sm:text-lg mt-4 font-light" style="color: #5a6a82;">Contáctenos y le responderemos dentro de las 24 horas.</p>
         </div>
 
-        <!-- Formulario -->
         <form (ngSubmit)="sendContact()" [formGroup]="contactForm"
-          class="glass-card rounded-[1.5rem] sm:rounded-[2rem] p-7 sm:p-10 md:p-12 space-y-6">
+          class="rounded-[1.75rem] p-7 sm:p-10 md:p-12 space-y-6"
+          style="background: white; border: 1px solid rgba(0,44,85,0.08); box-shadow: 0 20px 60px rgba(0,44,85,0.08);">
 
           <div class="grid sm:grid-cols-2 gap-6">
-            <!-- Nombre -->
             <div>
-              <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">Nombre *</label>
+              <label class="block text-[10px] font-bold uppercase tracking-[0.2em] mb-2.5" style="color: #5a6a82;">Nombre *</label>
               <input
                 formControlName="nombre"
                 type="text"
                 placeholder="Juan García"
-                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
+                class="w-full rounded-xl px-4 py-3.5 text-base transition-all duration-300 outline-none"
+                style="background: #f7f9fc; border: 1px solid rgba(0,44,85,0.1); color: #0b0e29;"
+                onfocus="this.style.borderColor='rgba(0,44,85,0.4)'; this.style.boxShadow='0 0 0 3px rgba(0,44,85,0.08)'"
+                onblur="this.style.borderColor='rgba(0,44,85,0.1)'; this.style.boxShadow='none'"
               />
               @if (contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched) {
-                <p class="text-xs text-red-500 mt-1.5">El nombre es requerido.</p>
+                <p class="text-xs mt-1.5" style="color: #ef4444;">El nombre es requerido.</p>
               }
             </div>
-            <!-- Email -->
             <div>
-              <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">Email *</label>
+              <label class="block text-[10px] font-bold uppercase tracking-[0.2em] mb-2.5" style="color: #5a6a82;">Email *</label>
               <input
                 formControlName="email"
                 type="email"
                 placeholder="juan@empresa.com"
-                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
+                class="w-full rounded-xl px-4 py-3.5 text-base transition-all duration-300 outline-none"
+                style="background: #f7f9fc; border: 1px solid rgba(0,44,85,0.1); color: #0b0e29;"
+                onfocus="this.style.borderColor='rgba(0,44,85,0.4)'; this.style.boxShadow='0 0 0 3px rgba(0,44,85,0.08)'"
+                onblur="this.style.borderColor='rgba(0,44,85,0.1)'; this.style.boxShadow='none'"
               />
               @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
-                <p class="text-xs text-red-500 mt-1.5">Email inválido.</p>
+                <p class="text-xs mt-1.5" style="color: #ef4444;">Email inválido.</p>
               }
             </div>
           </div>
 
-          <!-- Teléfono -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">Teléfono <span class="normal-case font-normal text-neutral-400">(opcional)</span></label>
+            <label class="block text-[10px] font-bold uppercase tracking-[0.2em] mb-2.5" style="color: #5a6a82;">Teléfono <span class="normal-case font-normal opacity-60">(opcional)</span></label>
             <input
               formControlName="telefono"
               type="tel"
               placeholder="+54 9 11 1234-5678"
-              class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300"
+              class="w-full rounded-xl px-4 py-3.5 text-base transition-all duration-300 outline-none"
+              style="background: #f7f9fc; border: 1px solid rgba(0,44,85,0.1); color: #0b0e29;"
+              onfocus="this.style.borderColor='rgba(0,44,85,0.4)'; this.style.boxShadow='0 0 0 3px rgba(0,44,85,0.08)'"
+              onblur="this.style.borderColor='rgba(0,44,85,0.1)'; this.style.boxShadow='none'"
             />
           </div>
 
-          <!-- Mensaje -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">Mensaje *</label>
+            <label class="block text-[10px] font-bold uppercase tracking-[0.2em] mb-2.5" style="color: #5a6a82;">Mensaje *</label>
             <textarea
               formControlName="mensaje"
               rows="5"
               placeholder="Contanos brevemente sobre su organización y qué necesitan mejorar..."
-              class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300 resize-none"
+              class="w-full rounded-xl px-4 py-3.5 text-base transition-all duration-300 outline-none resize-none"
+              style="background: #f7f9fc; border: 1px solid rgba(0,44,85,0.1); color: #0b0e29;"
+              onfocus="this.style.borderColor='rgba(0,44,85,0.4)'; this.style.boxShadow='0 0 0 3px rgba(0,44,85,0.08)'"
+              onblur="this.style.borderColor='rgba(0,44,85,0.1)'; this.style.boxShadow='none'"
             ></textarea>
             @if (contactForm.get('mensaje')?.invalid && contactForm.get('mensaje')?.touched) {
-              <p class="text-xs text-red-500 mt-1.5">El mensaje es requerido.</p>
+              <p class="text-xs mt-1.5" style="color: #ef4444;">El mensaje es requerido.</p>
             }
           </div>
 
-          <!-- Estado / Submit -->
           @if (formStatus === 'success') {
-            <div class="flex items-center gap-3 bg-green-50 border border-green-200 rounded-xl px-5 py-4">
-              <span class="material-symbols-outlined text-green-600">check_circle</span>
-              <p class="text-sm font-medium text-green-700">Mensaje enviado. Le responderemos a la brevedad.</p>
+            <div class="flex items-center gap-3 rounded-xl px-5 py-4" style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2);">
+              <span class="material-symbols-outlined" style="color: #10b981;">check_circle</span>
+              <p class="text-sm font-medium" style="color: #059669;">Mensaje enviado. Le responderemos a la brevedad.</p>
             </div>
           }
           @if (formStatus === 'error') {
-            <div class="flex items-center gap-3 bg-red-50 border border-red-200 rounded-xl px-5 py-4">
-              <span class="material-symbols-outlined text-red-600">error</span>
-              <p class="text-sm font-medium text-red-700">No se pudo enviar el mensaje. Intente nuevamente.</p>
+            <div class="flex items-center gap-3 rounded-xl px-5 py-4" style="background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);">
+              <span class="material-symbols-outlined" style="color: #ef4444;">error</span>
+              <p class="text-sm font-medium" style="color: #dc2626;">No se pudo enviar el mensaje. Intente nuevamente.</p>
             </div>
           }
 
           <button
             type="submit"
             [disabled]="sending"
-            class="w-full relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:py-5 font-bold uppercase tracking-widest text-sm text-white bg-primary-brand rounded-full overflow-hidden group shadow-[0_10px_30px_rgba(0,44,85,0.25)] transition-all duration-500 hover:-translate-y-1 disabled:opacity-60 disabled:pointer-events-none cursor-pointer">
-            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-brand to-accent-glow group-hover:opacity-100 opacity-0 transition-opacity duration-500"></span>
+            class="w-full relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:py-5 font-bold uppercase tracking-widest text-sm text-white rounded-full overflow-hidden group transition-all duration-300 hover:-translate-y-1 disabled:opacity-60 disabled:pointer-events-none cursor-pointer"
+            style="background: linear-gradient(135deg, #002c55, #0a3d70); box-shadow: 0 12px 40px rgba(0,44,85,0.3);">
+            <span class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" style="background: linear-gradient(135deg, #0a3d70, #002c55);"></span>
             @if (sending) {
               <span class="material-symbols-outlined animate-spin relative z-10">progress_activity</span>
             }
-            <span class="relative z-10 group-hover:text-white transition-colors duration-500">
-              {{ sending ? 'Enviando...' : 'Iniciar consulta' }}
-            </span>
+            <span class="relative z-10">{{ sending ? 'Enviando...' : 'Iniciar consulta' }}</span>
+            @if (!sending) {
+              <span class="material-symbols-outlined text-lg relative z-10 transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+            }
           </button>
 
-          <p class="text-center text-xs text-text-secondary-light">O escríbanos directamente a <a href="mailto:consultas@arkhon.com.ar" class="text-primary-brand hover:underline font-medium">consultas@arkhon.com.ar</a></p>
+          <p class="text-center text-xs" style="color: #5a6a82;">
+            O escríbanos directamente a
+            <a href="mailto:consultas@arkhon.com.ar" class="font-semibold transition-colors hover:underline" style="color: #002c55;">consultas@arkhon.com.ar</a>
+          </p>
         </form>
       </div>
     </section>
+
   </main>
 
-  <footer class="py-10 sm:py-16 border-t border-border-light relative z-10 bg-surface-light backdrop-blur-md">
-    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
-        <div>
-          <img src="logo 2.png" class="h-10 w-auto max-w-[200px] object-contain object-left mix-blend-multiply mb-2" alt="ARKHON Logo">
-          <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-text-secondary-light mt-2 sm:mt-3 font-medium">Asesoramiento Ejecutivo y Gestión</p>
-        </div>
-        <div class="flex space-x-8 sm:space-x-12 text-xs font-bold uppercase tracking-widest text-text-secondary-light">
-          <a class="hover:text-primary-brand transition-colors hover:-translate-y-1 transform duration-300" href="#">LinkedIn</a>
-          <a class="hover:text-primary-brand transition-colors hover:-translate-y-1 transform duration-300" href="#">Email</a>
-          <span class="text-text-secondary-light">© 2026</span>
+  <!-- ══════════════════════════════════════ FOOTER ═══ -->
+  <footer class="relative overflow-hidden" style="background: #070d1a; border-top: 1px solid rgba(137,174,200,0.08);">
+
+    <div class="absolute inset-0 dot-grid opacity-15 pointer-events-none"></div>
+
+    <!-- Top band -->
+    <div class="py-14 sm:py-20 relative z-10" style="border-bottom: 1px solid rgba(137,174,200,0.06);">
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+
+          <!-- Brand -->
+          <div class="sm:col-span-2 lg:col-span-1">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="h-10 w-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #002c55, #0a3d70);">
+                <img src="isotipousar.png" class="h-7 w-7 object-contain" style="filter: invert(1) brightness(2);" alt="ARKHON">
+              </div>
+              <div>
+                <div class="text-lg font-extrabold tracking-[0.15em] uppercase text-white">ARKHON</div>
+                <div class="text-[9px] font-medium tracking-[0.3em] uppercase" style="color: #B69A63;">CONSULTORA</div>
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed mb-6" style="color: rgba(232,238,245,0.35);">Gestión Administrativa, Económica y Financiera de alto nivel.</p>
+            <div class="flex gap-3">
+              <a href="https://www.linkedin.com/company/arkhon/" target="_blank" class="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:border-white/20" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="rgba(232,238,245,0.5)"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+              <a href="mailto:consultas@arkhon.com.ar" class="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:border-white/20" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);">
+                <span class="material-symbols-outlined text-sm" style="color: rgba(232,238,245,0.5);">mail</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Servicios -->
+          <div>
+            <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-5" style="color: rgba(232,238,245,0.3);">Servicios</h4>
+            <ul class="space-y-3">
+              <li><a href="#servicios" class="text-sm transition-colors duration-300 hover:text-white" style="color: rgba(232,238,245,0.45);">Diagnóstico de gestión</a></li>
+              <li><a href="#servicios" class="text-sm transition-colors duration-300 hover:text-white" style="color: rgba(232,238,245,0.45);">Acompañamiento ejecutivo</a></li>
+              <li><a href="#servicios" class="text-sm transition-colors duration-300 hover:text-white" style="color: rgba(232,238,245,0.45);">Planificación estratégica</a></li>
+              <li><a href="#servicios" class="text-sm transition-colors duration-300 hover:text-white" style="color: rgba(232,238,245,0.45);">Control de Gestión</a></li>
+            </ul>
+          </div>
+
+          <!-- Empresa -->
+          <div>
+            <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-5" style="color: rgba(232,238,245,0.3);">Empresa</h4>
+            <ul class="space-y-3">
+              <li><a href="#equipo" class="text-sm transition-colors duration-300 hover:text-white" style="color: rgba(232,238,245,0.45);">Nuestro equipo</a></li>
+              <li><a href="#enfoque" class="text-sm transition-colors duration-300 hover:text-white" style="color: rgba(232,238,245,0.45);">Enfoque</a></li>
+              <li><a href="#colaboraciones" class="text-sm transition-colors duration-300 hover:text-white" style="color: rgba(232,238,245,0.45);">Clientes</a></li>
+              <li><a href="#socios" class="text-sm transition-colors duration-300 hover:text-white" style="color: rgba(232,238,245,0.45);">Socios</a></li>
+            </ul>
+          </div>
+
+          <!-- Contacto -->
+          <div>
+            <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-5" style="color: rgba(232,238,245,0.3);">Contacto</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="mailto:consultas@arkhon.com.ar" class="text-sm transition-colors duration-300 hover:text-white flex items-center gap-2" style="color: rgba(232,238,245,0.45);">
+                  <span class="material-symbols-outlined text-sm">mail</span>
+                  consultas@arkhon.com.ar
+                </a>
+              </li>
+              <li>
+                <a href="#contacto" class="text-sm transition-colors duration-300 hover:text-white flex items-center gap-2" style="color: rgba(232,238,245,0.45);">
+                  <span class="material-symbols-outlined text-sm">chat_bubble</span>
+                  Formulario de contacto
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
+
+    <!-- Bottom bar -->
+    <div class="py-6 relative z-10">
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-[11px] font-medium" style="color: rgba(232,238,245,0.2);">© 2026 ARKHON Consultora. Todos los derechos reservados.</p>
+        <p class="text-[11px]" style="color: rgba(232,238,245,0.15);">
+          Desarrollado por
+          <a href="https://katrix.com.ar" target="_blank" class="transition-colors hover:text-white/40" style="color: rgba(232,238,245,0.25);">Katrix</a>
+        </p>
+      </div>
+    </div>
+
   </footer>
 
 </div>
