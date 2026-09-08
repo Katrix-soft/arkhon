@@ -10,12 +10,15 @@ app.use(cors({
 }));
 
 const transporter = nodemailer.createTransport({
-  host: 'c2781652.ferozo.com',
-  port: 465,
-  secure: true, // SSL
+  host: process.env.SMTP_HOST,
+  port: parseInt(process.env.SMTP_PORT) || 587,
+  secure: parseInt(process.env.SMTP_PORT) === 465, // true solo para SSL/465, false para STARTTLS/587
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS
+  },
+  tls: {
+    rejectUnauthorized: false // hosting compartido suele tener cert autofirmado
   }
 });
 
@@ -28,7 +31,7 @@ app.post('/api/contact', async (req, res) => {
 
   const mailOptions = {
     from: `"ARKHON Consultora" <${process.env.SMTP_USER}>`,
-    to: process.env.SMTP_USER, // consultas@arkhon.com.ar
+    to: process.env.SMTP_TO || process.env.SMTP_USER,
     replyTo: email,
     subject: `Nueva consulta de ${nombre}`,
     html: `
