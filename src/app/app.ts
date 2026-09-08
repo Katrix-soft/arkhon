@@ -12,6 +12,8 @@ export class App implements AfterViewInit, OnDestroy {
   isMobileMenuOpen = false;
   sending = false;
   formStatus: 'idle' | 'success' | 'error' = 'idle';
+  showSuccessModal = false;
+  submittedData = { nombre: '', email: '' };
   contactForm: FormGroup;
 
   private apiUrl = '/api/contact';
@@ -99,20 +101,28 @@ export class App implements AfterViewInit, OnDestroy {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
+  closeModal() {
+    this.showSuccessModal = false;
+  }
+
   sendContact() {
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
     }
+    const val = { ...this.contactForm.value };
     this.sending = true;
     this.formStatus = 'idle';
-    this.http.post(this.apiUrl, this.contactForm.value).subscribe({
+    this.http.post(this.apiUrl, val).subscribe({
       next: () => {
+        this.submittedData = { nombre: val.nombre, email: val.email };
         this.formStatus = 'success';
         this.sending = false;
+        this.showSuccessModal = true;
         this.contactForm.reset();
       },
-      error: () => {
+      error: (err) => {
+        console.error('Error enviando consulta:', err);
         this.formStatus = 'error';
         this.sending = false;
       }

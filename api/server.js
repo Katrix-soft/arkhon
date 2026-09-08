@@ -9,16 +9,22 @@ app.use(cors({
   origin: process.env.ALLOWED_ORIGIN || '*'
 }));
 
+const SMTP_HOST = process.env.SMTP_HOST || 'mail.arkhon.com.ar';
+const SMTP_PORT = parseInt(process.env.SMTP_PORT) || 587;
+const SMTP_USER = process.env.SMTP_USER || 'consultas@arkhon.com.ar';
+const SMTP_PASS = process.env.SMTP_PASS || 'Arkh@n26$';
+const SMTP_TO = process.env.SMTP_TO || SMTP_USER;
+
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT) || 587,
-  secure: parseInt(process.env.SMTP_PORT) === 465, // true solo para SSL/465, false para STARTTLS/587
+  host: SMTP_HOST,
+  port: SMTP_PORT,
+  secure: SMTP_PORT === 465,
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS
+    user: SMTP_USER,
+    pass: SMTP_PASS
   },
   tls: {
-    rejectUnauthorized: false // hosting compartido suele tener cert autofirmado
+    rejectUnauthorized: false
   }
 });
 
@@ -30,8 +36,8 @@ app.post('/api/contact', async (req, res) => {
   }
 
   const mailOptions = {
-    from: `"ARKHON Consultora" <${process.env.SMTP_USER}>`,
-    to: process.env.SMTP_TO || process.env.SMTP_USER,
+    from: `"ARKHON Consultora" <${SMTP_USER}>`,
+    to: SMTP_TO,
     replyTo: email,
     subject: `Nueva consulta de ${nombre}`,
     html: `

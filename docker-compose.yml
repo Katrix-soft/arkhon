@@ -22,15 +22,17 @@ services:
       dockerfile: Dockerfile
     container_name: api-arkhon
     restart: always
+    env_file:
+      - ./api/.env
     ports:
       - "3099:3000"
     environment:
-      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_HOST=${SMTP_HOST:-mail.arkhon.com.ar}
       - SMTP_PORT=${SMTP_PORT:-587}
-      - SMTP_USER=${SMTP_USER}
-      - SMTP_PASS=${SMTP_PASS}
-      - SMTP_TO=${SMTP_TO:-${SMTP_USER}}
-      - ALLOWED_ORIGIN=https://arkhon.com.ar
+      - SMTP_USER=${SMTP_USER:-consultas@arkhon.com.ar}
+      - SMTP_PASS=${SMTP_PASS:-Arkh@n26$}
+      - SMTP_TO=${SMTP_TO:-consultas@arkhon.com.ar}
+      - ALLOWED_ORIGIN=${ALLOWED_ORIGIN:-*}
       - PORT=3000
       - VIRTUAL_HOST=api.arkhon.com.ar
       - VIRTUAL_PORT=3000
